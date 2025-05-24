@@ -28,11 +28,30 @@
 
   // Keep existing file associations
   "files.associations": {
-    "*.css": "tailwindcss"
+    "*.css": "tailwindcss",
+    "*.mdc": "mdc",
+    "*.md": "markdown"
   },
   "tailwindCSS.includeLanguages": {
     "vue": "html"
   },
+
+  "[mdc]": {
+    "editor.defaultFormatter": "Nuxt.mdc",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": null,
+    "editor.formatOnSave": false
+  },
+
+  "mdc.enableFormatting": true,
+  "mdc.debug": true,
+  "mdc.enableComponentMetadataCompletions": true,
 
   // Keep existing formatter settings
   "[typescript]": {

@@ -67,12 +67,6 @@ const navigationCategories = ref([
         slug: '/opportunities',
         icon: 'material-symbols:work',
       },
-      {
-        id: '4',
-        label: 'Events',
-        slug: '/astronomy-events',
-        icon: 'mdi:calendar-star',
-      },
     ],
   },
   {
@@ -194,7 +188,7 @@ export default function usePages() {
     checkUsage(myFeeds)
   }
 
-  const initializeFeeds = () => {
+  /* const initializeFeeds = () => {
     if (profile.value.id) {
       const toast = useNotification()
       client
@@ -228,9 +222,9 @@ export default function usePages() {
           }
         })
     }
-  }
+  } */
 
-  const deleteFeed = (feedId: string) => {
+  /* const deleteFeed = (feedId: string) => {
     const newsCategory = navigationCategories.value.find((cat) => cat.id === 'news')
     const myFeeds = newsCategory?.items.find((item) => item.id === 'my-feeds')
 
@@ -242,7 +236,7 @@ export default function usePages() {
     }
 
     checkUsage(myFeeds)
-  }
+  } */
 
   const checkUsage = (myFeeds: Record<string, any>) => {
     const feeds = myFeeds.children.filter(
@@ -255,19 +249,8 @@ export default function usePages() {
     myFeeds.children = shouldShowUpgrade ? [upgradePlan, ...feeds] : [createFeedItem, ...feeds]
   }
 
-  onMounted(() => {
-    initializeFeeds()
-
-    if (process.env.NODE_ENV !== 'production') {
-      window.__APP_NAV = navigationCategories.value
-    }
-  })
-
   return {
     appLinks: navigationCategories,
     breadcrumbs,
-    currentFeedName,
-    addFeed,
-    deleteFeed,
   }
 }

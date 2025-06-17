@@ -80,9 +80,6 @@
     "website:dev": "docker compose -f docker-compose.website.yaml up -d"
   },
   "dependencies": {
-    "@fullcalendar/daygrid": "^6.1.15",
-    "@fullcalendar/interaction": "^6.1.15",
-    "@fullcalendar/vue3": "^6.1.15",
     "@iconify-json/game-icons": "^1.2.1",
     "@iconify-json/lucide": "^1.2.37",
     "@iconify-json/material-symbols": "^1.2.1",

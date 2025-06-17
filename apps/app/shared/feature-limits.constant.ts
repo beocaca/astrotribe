@@ -129,32 +129,6 @@ export const FEATURES = {
       },
     ],
   },
-  BOOKMARKS: {
-    key: 'BOOKMARKS',
-    display: {
-      name: 'Bookmarks',
-      brandedName: 'Bookmarks',
-      description: 'Save articles for later',
-    },
-    limit: {
-      [PlanType.FREE]: 50,
-      [PlanType.PRO]: -1,
-    },
-    benefits: [],
-  },
-  BOOKMARK_FOLDERS: {
-    key: 'BOOKMARK_FOLDERS',
-    display: {
-      name: 'Bookmark Folders',
-      brandedName: 'Bookmark Folders',
-      description: 'Organize your bookmarks into folders',
-    },
-    limit: {
-      [PlanType.FREE]: 3,
-      [PlanType.PRO]: -1,
-    },
-    benefits: [],
-  },
 } as const
 
 export type FeatureKey = keyof typeof FEATURES

@@ -14,7 +14,6 @@
 - Companies (/companies)
 - Opportunities (/opportunities)
 - News Feed (/news)
-- Bookmarks (/profile/bookmarks)
 - Settings (/settings) </application_pages>
 
 Use Playwright to log in as our test user (test.user@example.com with password password123) at

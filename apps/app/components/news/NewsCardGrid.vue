@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { useTimeAgo } from '@vueuse/core'
-import { useBookmarkStore } from '@/stores/useBookmarkStore'
 import { useVotesStore } from '@/stores/useVotesStore'
 import { extractPlainText } from '~/utils/extractPlainText'
 
@@ -36,14 +35,11 @@ interface NewsCardProps {
 const props = defineProps<NewsCardProps>()
 
 // Setup stores
-const bookmarkStore = useBookmarkStore()
 const voteStore = useVotesStore()
 
 // Local card state
 const isFlipped = ref(false)
-const isBookmarked = computed(() =>
-  bookmarkStore.isBookmarked(props.news.id, props.news.content_type),
-)
+
 const displayScore = computed(() => voteStore.getScore(props.news.id) ?? props.news.vote_count ?? 0)
 const currentVote = computed(() => voteStore.getVoteType(props.news.id))
 
@@ -53,23 +49,6 @@ const handleVote = async (voteType: number) => {
     await voteStore.submitVote(props.news.id, voteType, props.news.content_type)
   } catch (error: any) {
     console.error('Error submitting vote:', error)
-  }
-}
-
-// Toggle bookmark
-const toggleBookmark = async () => {
-  try {
-    await bookmarkStore.handleToggleBookmark({
-      id: props.news.id,
-      type: props.news.content_type,
-      title: props.news.title,
-      description: props.news.description,
-      thumbnail: props.news.featured_image,
-      url: props.news.url,
-      author: props.news.author,
-    })
-  } catch (error: any) {
-    console.error('Error toggling bookmark:', error)
   }
 }
 
@@ -237,30 +216,6 @@ const clippedSummary = computed(() => {
           >▼</button
         >
       </div>
-
-      <!-- Bookmark + Article -->
-      <div class="flex items-center gap-3">
-        <button
-          :class="isBookmarked ? 'text-amber-500' : ''"
-          class="w-5 h-5 flex items-center justify-center"
-          @click.stop="toggleBookmark"
-          >🔖</button
-        >
-        <NuxtLink
-          :to="news.url"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex items-center gap-1 text-sm font-medium hover:text-primary-400 transition"
-          @click.stop="handleSourceVisit"
-        >
-          <span>Article</span>
-          <Icon
-            name="mdi:arrow-top-right"
-            class="w-3 h-3"
-          />
-        </NuxtLink>
-      </div>
-    </div>
   </div>
 </template>
 

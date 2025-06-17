@@ -22,7 +22,7 @@
   search responds with only the related content, or if it feeds it into the LLM for summarization.
 - Example searches, to help them get started (clicking on this should send the query)
 - Show copy button, downvote etc. (copy what chatGPT has at bottom of message), also allow users to
-  star / bookmark messages to save them.
+  star / messages to save them.
 - inline LaTeX converted to equations
 - Search History
 
@@ -69,7 +69,6 @@
 - Full List of Citations, users can choose Citation Type
 - Search can respond with segments of the full paper
 - Extracted Keywords are displayed
-- Bookmark icon for bookmarking / adding to bookmark group
 - Show sources
 - Show References to Tools / Institutions / Tables / Figures etc
 - Ability to switch between table and grid display

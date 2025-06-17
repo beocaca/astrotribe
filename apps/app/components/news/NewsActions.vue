@@ -3,7 +3,6 @@
 interface Props {
   score: number
   commentsCount?: number
-  bookmarked: boolean
   url: string
   content: any // Updated to accept any content from the unified content table
   onSourceVisit: () => Promise<void>
@@ -52,7 +51,6 @@ defineProps<Props>()
       </button> -->
     </div>
     <div class="flex items-center gap-2 justify-center">
-      <BookmarkButton :content="content" />
       <NuxtLink
         :to="url"
         target="_blank"

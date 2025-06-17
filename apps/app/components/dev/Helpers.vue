@@ -68,10 +68,10 @@ const reloadApp = () => {
 }
 
 const resetPinia = (): Record<string | 'all', () => void> => {
-  const pinia = getActivePinia() as ExtendedPinia
+  const pinia = getActivePinia() as ExtendedPinia | undefined
 
   if (!pinia) {
-    throw new Error('There are no stores')
+    throw new Error('[Pinia] No active instance – are you calling this before Nuxt injected it?')
   }
 
   const resetStores: Record<string, () => void> = {}
@@ -80,13 +80,19 @@ const resetPinia = (): Record<string | 'all', () => void> => {
     resetStores[name] = () => store.$reset()
   })
 
-  resetStores.all = () => pinia._s.forEach((store) => store.$reset())
+  resetStores.all = () => {
+    pinia._s.forEach((store) => store.$reset())
+  }
+
   return resetStores
 }
 
 const resetAllStores = () => {
-  const stores = resetPinia()
-  stores.all()
+  try {
+    resetPinia()
+  } catch (err) {
+    console.error('Failed to reset stores:', err)
+  }
 }
 </script>
 

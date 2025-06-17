@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import { parseOpportunityDescription, calculateDaysToDeadline, formatSalary } from '~/utils/opportunityFormatters'
+import {
+  parseOpportunityDescription,
+  calculateDaysToDeadline,
+  formatSalary,
+} from '~/utils/opportunityFormatters'
 import type { Opportunity } from '~/types/opportunities'
 
 // Route parameters and opportunity data loading
@@ -347,14 +351,6 @@ onMounted(() => {
                     />
                   </span>
                 </button>
-                <button
-                  class="p-4 text-gray-400 hover:text-primary-400 rounded-xl border border-primary-800/30 hover:border-primary-700/30 transition-all hover:shadow-lg hover:shadow-primary-600/5 bg-primary-900/50"
-                >
-                  <Icon
-                    name="heroicons:bookmark"
-                    class="w-5 h-5"
-                  />
-                </button>
               </div>
 
               <p class="text-sm text-gray-400">
@@ -478,8 +474,8 @@ onMounted(() => {
                     {{ opportunity.company }}
                   </h2>
                   <p class="text-gray-400 mb-6">
-                    Leading company in its sector, {{ opportunity.company }} constantly innovates to create
-                    the best technological solutions.
+                    Leading company in its sector, {{ opportunity.company }} constantly innovates to
+                    create the best technological solutions.
                   </p>
                   <div class="space-y-4">
                     <div class="flex items-center gap-3 text-sm">

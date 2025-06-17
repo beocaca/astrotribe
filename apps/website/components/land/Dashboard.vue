@@ -12,11 +12,6 @@ const capabilities = ref([
     color: 'from-blue-500 to-primary-600',
   },
   {
-    icon: 'mdi:bookmark-multiple',
-    text: 'Save searches and create research collections',
-    color: 'from-indigo-500 to-violet-600',
-  },
-  {
     icon: 'mdi:account-group',
     text: 'Follow space agencies, researchers, and companies',
     color: 'from-primary-600 to-cyan-600',

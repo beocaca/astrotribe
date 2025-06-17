@@ -21,7 +21,6 @@
    - Saves time by summarizing large amounts of information.
    - Distills complex concepts for general understanding.
    - Increases content consumption efficiency.
-   - Allows bookmarking and saving of necessary information.
    - Provides a unique combination of specific information tailored to the user's level of
      understanding.
    - Converts information into knowledge through user interaction and curated content.
@@ -40,5 +39,5 @@ actively participate in community-driven events, discussions, and projects.
 AstronEra employs cutting-edge AI to summarize vast amounts of information, making complex concepts
 accessible at beginner, intermediate, and expert levels. This feature is tailored to save time,
 increase content consumption efficiency, and convert information into actionable knowledge. Users
-can bookmark and save essential information, with paid plans offering advanced summarization and
+can save essential information, with paid plans offering advanced summarization and
 document references for enhanced research capabilities.

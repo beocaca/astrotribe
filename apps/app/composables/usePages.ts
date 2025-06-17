@@ -92,14 +92,7 @@ const navigationCategories = ref([
   {
     id: 'profile',
     label: 'Profile',
-    items: [
-      {
-        id: '4',
-        label: 'Bookmarks',
-        slug: '/profile/bookmarks',
-        icon: 'mdi:bookmark-outline',
-      },
-    ],
+    items: [],
   },
 ] as NavigationCategory[])
 

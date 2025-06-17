@@ -32,7 +32,6 @@ const props = defineProps<Props>()
 
 const emit = defineEmits<{
   (e: 'view', company: any): void
-  (e: 'bookmark', company: any): void
   (e: 'tag', tag: string): void
 }>()
 

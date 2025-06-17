@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const route = useRoute()
 const feedId = computed(() => String(route.params.feed))
-const { deleteFeed, currentFeedName } = usePages()
+// const { deleteFeed, currentFeedName } = usePages()
 
 console.log('feedId', feedId.value)
 
@@ -144,7 +144,6 @@ const formatSourceUrl = (url: string) => {
     return url
   }
 }
-const { topBannerAd } = useAdsStore()
 
 // UI state
 const showFiltersModal = ref(false)
@@ -156,7 +155,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div>
+  <div v-if="false">
     <FeedTitle
       :title="currentFeedName"
       :filters="{ categories, sources }"

@@ -41,10 +41,7 @@ watch(
 )
 const emit = defineEmits<{
   (e: 'update:visible', value: boolean): void
-  (e: 'bookmark', company: Company): void
 }>()
-
-const isBookmarked = ref(false) // This would be connected to a store in a real implementation
 
 const close = () => {
   localVisible.value = false
@@ -113,17 +110,6 @@ const openJobs = ref([
     <template #header>
       <div class="flex items-center justify-between w-full pr-8">
         <h2 class="text-xl font-bold text-white">{{ company.name }}</h2>
-        <button
-          class="p-2 rounded-full hover:bg-primary-800/50"
-          :title="isBookmarked ? 'Remove bookmark' : 'Bookmark company'"
-          @click="toggleBookmark"
-        >
-          <Icon
-            :name="isBookmarked ? 'mdi:bookmark' : 'mdi:bookmark-outline'"
-            class="w-5 h-5"
-            :class="isBookmarked ? 'text-primary-400' : 'text-white'"
-          />
-        </button>
       </div>
     </template>
 

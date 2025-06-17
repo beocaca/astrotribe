@@ -25,13 +25,6 @@ const features = [
     icon: 'mdi:tune-vertical',
     metrics: ['Personalized feed', 'Topic filters'],
   },
-  {
-    id: useId(),
-    title: 'Smart Bookmarks',
-    subtitle: 'Save and organize your reading list',
-    icon: 'mdi:bookmark-multiple',
-    metrics: ['Custom folders', 'Quick access'],
-  },
 ]
 
 onMounted(() => {

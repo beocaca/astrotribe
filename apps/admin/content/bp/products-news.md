@@ -67,7 +67,6 @@
   - Title
   - Description (or summary of article)
   - Published Date
-  - Bookmark
   - NEW if < 24 hours old
 
 ## What will user see in future

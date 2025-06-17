@@ -70,17 +70,10 @@ async function getUserMetrics(client: any, userId: string) {
     .gte('created_at', `${today}T00:00:00`)
     .order('created_at', { ascending: false })
 
-  const { data: todayBookmarks } = await client
-    .from('bookmarks')
-    .select('created_at')
-    .eq('user_id', userId)
-    .gte('created_at', `${today}T00:00:00`)
-
   return {
     ...metrics,
     today_activity: {
       votes: todayVotes || [],
-      bookmarks: todayBookmarks || [],
     },
   }
 }

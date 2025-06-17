@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useTimeAgo } from '@vueuse/core'
-import { useBookmarkStore } from '@/stores/useBookmarkStore'
 import { useVotesStore } from '@/stores/useVotesStore'
 import { extractPlainText } from '~/utils/extractPlainText'
 
@@ -34,12 +33,8 @@ interface NewsCardProps {
 
 const props = defineProps<NewsCardProps>()
 
-const bookmarkStore = useBookmarkStore()
 const voteStore = useVotesStore()
 
-const isBookmarked = computed(() =>
-  bookmarkStore.isBookmarked(props.news.id, props.news.content_type),
-)
 const displayScore = computed(() => voteStore.getScore(props.news.id) ?? props.news.vote_count ?? 0)
 const currentVote = computed(() => voteStore.getVoteType(props.news.id))
 
@@ -58,18 +53,6 @@ const publishedTimeAgo = computed(() => {
   if (!props.news.published_at) return ''
   return useTimeAgo(new Date(props.news.published_at)).value
 })
-
-const toggleBookmark = () => {
-  bookmarkStore.handleToggleBookmark({
-    id: props.news.id,
-    type: props.news.content_type,
-    title: props.news.title,
-    description: props.news.description,
-    thumbnail: props.news.featured_image,
-    url: props.news.url,
-    author: props.news.author,
-  })
-}
 
 const handleVote = (voteType: number) => {
   voteStore.submitVote(props.news.id, voteType, props.news.content_type)
@@ -146,18 +129,6 @@ const imageSource = computed(() => props.news.featured_image || fallbackImage)
           />
         </button>
       </div>
-
-      <!-- Bookmark -->
-      <button
-        class="p-1 hover:text-amber-500"
-        :class="{ 'text-amber-500': isBookmarked }"
-        @click.stop="toggleBookmark"
-      >
-        <Icon
-          :name="isBookmarked ? 'mdi:bookmark' : 'mdi:bookmark-outline'"
-          class="w-5 h-5"
-        />
-      </button>
 
       <!-- Source Link -->
       <NuxtLink

@@ -61,12 +61,6 @@
               class="w-4 h-4"
             />
           </PrimeButton>
-          <PrimeButton class="p-button-outlined">
-            <Icon
-              name="mdi:bookmark-outline"
-              class="w-4 h-4"
-            />
-          </PrimeButton>
         </div>
       </div>
     </div>

@@ -17,11 +17,6 @@ const features = [
     description: 'Customize your feed by selecting specific space categories',
     icon: 'mdi:tune-vertical',
   },
-  {
-    text: 'Smart Bookmarking',
-    description: 'Save and organize articles into custom folders',
-    icon: 'mdi:bookmark-outline',
-  },
 ]
 
 const comingSoon = [

@@ -16,6 +16,7 @@
     "@astronera/db": "workspace:*",
     "@astronera/referral": "workspace:*",
     "@astronera/supabase": "workspace:*",
+    "@nuxt/content": "^3.5.1",
     "@nuxt/image": "^1.10.0",
     "@primevue/core": "^4.3.3",
     "@primevue/nuxt-module": "^4.3.3",

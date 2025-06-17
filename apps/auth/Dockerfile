@@ -13,7 +13,6 @@ RUN apt-get update && \
 # Copy necessary files
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc turbo.json tsconfig.json ./
 COPY apps/auth ./apps/auth
-COPY libs ./libs
 COPY layers ./layers
 COPY theme ./theme
 COPY shared ./shared

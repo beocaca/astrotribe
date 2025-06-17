@@ -7,7 +7,6 @@
 - Vite 6
 - Postgressql
 - Prisma
-- winston
 - zod
 - resend
 - Supabase

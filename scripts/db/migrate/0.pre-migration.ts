@@ -1,15 +1,13 @@
 // scripts/db/migrate/0.pre-migration-checks.ts
 import chalk from 'chalk'
 import type { Pool } from 'pg'
-import pool from '../client'
+import pool from '../shared/clients/pg.client.js'
 import {
   processTableComments,
   initializeCommentsFile,
   validateTableComments,
 } from './tasks/extractTableComments'
 import { processCronJobs, initializeCronJobsFile, validateCronJobs } from './tasks/extractCronJobs'
-import { dropAllRLSPolicies } from './tasks/extractRLSPolicies'
-import { disableRLSOnAllTables } from './utils/manageRLS'
 
 async function checkAndAddTriggers(pool: Pool): Promise<void> {
   const client = await pool.connect()
@@ -151,12 +149,6 @@ export async function preMigrationChecks(): Promise<void> {
 
     // Process table comments
     await checkTableComments()
-
-    console.log(chalk.blue('\n🔐 Managing RLS policies...'))
-    await dropAllRLSPolicies(pool)
-
-    console.log(chalk.blue('\n🔓 Temporarily disabling RLS for migration...'))
-    await disableRLSOnAllTables(pool)
 
     // Process cron jobs
     await checkCronJobs()

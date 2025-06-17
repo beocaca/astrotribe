@@ -1,7 +1,7 @@
 // Debug script to check runtime config loading
-import { config } from 'dotenv'
 import { fileURLToPath } from 'url'
 import { dirname, join } from 'path'
+import { config } from 'dotenv'
 import { devPortMap } from './shared/paths.config'
 
 // Load environment variables
@@ -14,7 +14,7 @@ console.log('NUXT_PUBLIC_SUPABASE_KEY:', process.env.NUXT_PUBLIC_SUPABASE_KEY)
 
 // Check the import of shared runtime config
 try {
-  const { sharedRuntimeConfig } = require('./shared/runtime.config')
+  const { sharedRuntimeConfig } = await import('./shared/runtime.config')
   console.log('Shared runtime config loaded successfully')
   console.log('Runtime config content:', JSON.stringify(sharedRuntimeConfig, null, 2))
 } catch (error: any) {

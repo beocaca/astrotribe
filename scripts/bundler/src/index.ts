@@ -268,9 +268,7 @@ async function resolveDependency(specifier: string, opts: ResolveOptions): Promi
     specifier.startsWith('node:') ||
     specifier.startsWith('http:') ||
     specifier.startsWith('https:') ||
-    ['vue', 'pinia', 'nuxt', 'axios', 'storeToRefs', 'definePageMeta', 'onMounted'].includes(
-      specifier,
-    ) ||
+    ['vue', 'pinia', 'nuxt', 'storeToRefs', 'definePageMeta', 'onMounted'].includes(specifier) ||
     specifier.startsWith('nuxt/') ||
     specifier.startsWith('virtual:') ||
     specifier.startsWith('type ')

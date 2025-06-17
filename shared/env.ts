@@ -44,6 +44,10 @@ export const getSharedEnv = () => ({
         environmentConsistencyChecker: true,
       },
     },
+    razorpayKey:
+      process.env.NODE_ENV === 'production'
+        ? process.env.NUXT_RAZORPAY_KEY
+        : process.env.NUXT_RAZORPAY_TEST_KEY,
   },
   private: {
     cmsURL: process.env.NUXT_CMS_URL ?? localHost(devPortMap.cms),
@@ -59,10 +63,6 @@ export const getSharedEnv = () => ({
     redisFlushKey: process.env.NUXT_REDIS_FLUSH_KEY,
     scraperKey: process.env.NUXT_SCRAPER_KEY,
     backupUrl: process.env.DATABASE_BACKUP_URL,
-    razorpayKey:
-      process.env.NODE_ENV === 'production'
-        ? process.env.NUXT_RAZORPAY_KEY
-        : process.env.NUXT_RAZORPAY_TEST_KEY,
     razorpaySecret:
       process.env.NODE_ENV === 'production'
         ? process.env.NUXT_RAZORPAY_SECRET

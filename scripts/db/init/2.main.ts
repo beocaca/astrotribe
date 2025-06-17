@@ -1,7 +1,7 @@
 // scripts/db/init/1.main.ts
 
 import chalk from 'chalk'
-import client from '../client'
+import client from '../shared/clients/pg.client.js'
 import { databaseConfig } from './1.config'
 import { setAdminUser } from './create-admin'
 import { refreshDatabaseViews } from './refresh-views'

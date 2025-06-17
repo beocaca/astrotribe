@@ -1,8 +1,6 @@
 // scripts/4.post-migration-cleanup.ts
 import chalk from 'chalk'
-import pool from '../client'
-import { extractRLSPolicies } from './tasks/extractRLSPolicies'
-import { enableRLSOnAllTables } from './utils/manageRLS'
+import pool from '../shared/clients/pg.client.js'
 
 /**
  * Post-migration cleanup - now automated!
@@ -13,13 +11,6 @@ async function postMigrationCleanup(): Promise<void> {
 
     console.log(chalk.green('✅ Table comments automatically synchronized'))
     console.log(chalk.gray('   Source file: supabase/comments/table-comments.sql'))
-
-    console.log(chalk.blue('\n🔐 Re-enabling RLS...'))
-    await enableRLSOnAllTables(pool)
-
-    // Extract RLS policies
-    console.log(chalk.cyan('🔍 Generating and Applying RLS policies...'))
-    await extractRLSPolicies(pool)
 
     console.log(chalk.gray('   Temp files: cleaned up automatically'))
     console.log(chalk.blue('\n📝 MANUAL STEP REMAINING:'))

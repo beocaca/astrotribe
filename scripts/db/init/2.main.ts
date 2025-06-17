@@ -1,12 +1,9 @@
 // scripts/db/init/1.main.ts
 
 import chalk from 'chalk'
-import permissionsConfig from '../generated/role-permissions.json'
 import client from '../client'
 import { databaseConfig } from './1.config'
 import { setAdminUser } from './create-admin'
-import { updateDatabasePermissions } from './upsert-permissions'
-import { runSeeders } from './run-seeders'
 import { refreshDatabaseViews } from './refresh-views'
 import { createVaultSecrets } from './utils/vault-secrets'
 
@@ -14,29 +11,10 @@ async function main() {
   console.log(chalk.blue('🚀 Starting database initialization...'))
 
   try {
-    // 1. Run seeders
-    if (databaseConfig.steps.runSeeders) {
-      console.log(chalk.blue('\n📦 Seeding database...'))
-      const seedResult = await runSeeders()
-      if (!seedResult) {
-        throw new Error('Database seeding failed')
-      }
-    }
-
     // 2. Set up admin users
     if (databaseConfig.steps.setAdminUsers) {
       console.log(chalk.blue('\n👤 Setting up admin users...'))
       await setAdminUser(client, databaseConfig.admins)
-    }
-
-    // 3. Update Database Permissions
-    if (databaseConfig.steps.updatePermissions) {
-      console.log(chalk.blue('\n🔑 Updating database permissions...'))
-      const permissionsUpdated = await updateDatabasePermissions(client, permissionsConfig)
-      if (!permissionsUpdated) {
-        throw new Error('Failed to update permissions')
-      }
-      console.log(chalk.green('✓ Database permissions updated'))
     }
 
     // 4. Refresh database views

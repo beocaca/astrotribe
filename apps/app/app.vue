@@ -20,18 +20,11 @@ useHead({
 
 const catTagStore = useCategoryTagStore()
 const currentUser = useCurrentUser()
-const folderStore = useFolderStore()
-const bookmarkStore = useBookmarkStore()
 
 onMounted(async () => {
   document.documentElement.classList.add('dark')
   try {
-    await Promise.all([
-      currentUser.refreshUserStore(),
-      folderStore.fetchFolders(),
-      bookmarkStore.fetchBookmarks(),
-      bookmarkStore.fetchBookmarkCounts(),
-    ])
+    await Promise.all([currentUser.refreshUserStore()])
   } catch (error: any) {
     console.error('Error initializing data:', error)
   }

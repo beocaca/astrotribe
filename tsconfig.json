@@ -5,9 +5,7 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "#layers/*": ["layers/*"],
-      "@ib/*": ["libs/*/src"],
-      "@astronera/*": ["libs/*/src/index.ts"]
+      "#layers/*": ["layers/*"]
     }
   },
   "references": [
@@ -26,14 +24,7 @@
     { "path": "layers/base" },
     { "path": "layers/crud" },
     { "path": "layers/advert" },
-    { "path": "layers/supabase" },
-
-    // Shared Libraries
-    { "path": "libs/logger" },
-    { "path": "libs/cache" },
-    { "path": "libs/db" },
-    { "path": "libs/core" },
-    { "path": "apps/api" }
+    { "path": "layers/supabase" }
   ],
   "include": ["prettier.config.mjs", "shared/**/*"],
   "exclude": ["node_modules", "dist"]

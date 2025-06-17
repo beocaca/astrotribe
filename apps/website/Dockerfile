@@ -54,7 +54,6 @@ WORKDIR /app
 # Copy all files for better layer caching
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc turbo.json tsconfig.json ./
 COPY apps/website ./apps/website
-COPY libs ./libs
 COPY layers ./layers
 COPY theme ./theme
 COPY shared ./shared

@@ -45,17 +45,6 @@ clean_node_modules() {
     # Remove root node_modules
     rm -rf node_modules
     print_success "Removed root node_modules"
-    
-    # Clean libs directory node_modules
-    if [ -d "libs" ]; then
-        cd libs
-        # First remove top-level node_modules in each lib
-        rm -rf */node_modules
-        # Then find and remove any nested node_modules
-        find . -name "node_modules" -type d -exec rm -rf {} +
-        cd ..
-        print_success "Cleaned all node_modules in libs directory"
-    fi
 }
 
 # Function to clean lock files

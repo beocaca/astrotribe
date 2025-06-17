@@ -116,13 +116,12 @@ async function runBuildWithLogs(projectPath: string): Promise<void> {
 }
 
 // ──────────────────────────────────────────────────────────
-// 3) Main function that picks subfolders from apps/libs/layers
+// 3) Main function that picks subfolders from apps/layers
 //    Builds only the *first* project for testing, then exits
 // ──────────────────────────────────────────────────────────
 async function main() {
   const rootDir = path.join(__dirname, '..')
   const appsDir = path.join(rootDir, 'apps')
-  const libsDir = path.join(rootDir, 'libs')
   const layersDir = path.join(rootDir, 'layers')
 
   console.log('Gathering projects to build...')
@@ -130,7 +129,6 @@ async function main() {
   // Gather all potential project directories
   const allProjectPaths = [
     ...getSubDirectories(appsDir),
-    ...getSubDirectories(libsDir),
     ...getSubDirectories(layersDir),
   ]
 

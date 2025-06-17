@@ -466,7 +466,6 @@ async function resolveWorkspacePackage(
   const potentialPackageRoots = [
     path.resolve(opts.monorepoRoot, 'packages', packageName),
     path.resolve(opts.monorepoRoot, 'apps', packageName),
-    path.resolve(opts.monorepoRoot, 'libs', packageName),
   ]
   for (const potentialPackagePath of potentialPackageRoots) {
     const potentialPackageJson = path.join(potentialPackagePath, 'package.json')

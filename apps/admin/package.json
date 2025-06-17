@@ -13,7 +13,6 @@
     "@astronera/advert": "workspace:*",
     "@astronera/base": "workspace:*",
     "@astronera/crud": "workspace:*",
-    "@astronera/db": "workspace:*",
     "@astronera/referral": "workspace:*",
     "@astronera/supabase": "workspace:*",
     "@nuxt/content": "^3.5.1",

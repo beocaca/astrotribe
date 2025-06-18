@@ -6,7 +6,6 @@ const { appLinks } = usePages()
 const mainNavItems = computed(() => {
   // For mobile, we'll show:
   // 1. Home from 'main' category
-  // 2. Feed from 'news' category
   // 3. Profile links
   const items = []
 

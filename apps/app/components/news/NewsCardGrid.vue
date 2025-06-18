@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { useTimeAgo } from '@vueuse/core'
-import { useVotesStore } from '@/stores/useVotesStore'
 import { extractPlainText } from '~/utils/extractPlainText'
 
 // Define props with better typing
@@ -107,22 +106,6 @@ const handleMouseEnter = () => {
 const handleMouseLeave = () => {
   isFlipped.value = false
 }
-
-// Metrics tracking
-const { trackNewsVisit } = useUserMetricsStore()
-let cleanupVisit: (() => Promise<void>) | null = null
-
-// Track when user visits source
-const handleSourceVisit = async () => {
-  cleanupVisit = await trackNewsVisit(props.news.id)
-}
-
-// Clean up when component is unmounted
-onBeforeUnmount(async () => {
-  if (cleanupVisit) {
-    await cleanupVisit()
-  }
-})
 
 // Image fallback
 const fallbackImage = '/images/news_fallback.jpg'

@@ -30,7 +30,7 @@ repayment plan includes ₹12,00,000 to be repaid starting after 12 months.
 ### Key Offerings
 
 - News and content aggregation with AI-driven summarization
-- Company profiles and job listings
+- Organization profiles and job listings
 - Social interaction features and community-driven events
 - Courses ranging from hobbyist to advanced levels
 - Custom AI search capabilities
@@ -40,7 +40,7 @@ repayment plan includes ₹12,00,000 to be repaid starting after 12 months.
 - Basic Plan: ₹500/month (60% of paid users, starts Month 3)
 - Pro Plan: ₹2,000/month (30% of paid users, starts Month 5)
 - Expert Plan: ₹4,000/month (15% of paid users, starts Month 7)
-- B2B: ₹50,000/month (4 companies by end of year, starts Month 9)
+- B2B: ₹50,000/month (4 organizations by end of year, starts Month 9)
 
 ## Month 1: Setting Up and Initial Expenditures
 

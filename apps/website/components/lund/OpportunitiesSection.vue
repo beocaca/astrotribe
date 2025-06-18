@@ -161,7 +161,7 @@ const trackViewAllOpportunities = (): void => {
               </div>
               <div class="text-left">
                 <h4 class="font-medium text-white text-sm">{{ opportunity.title }}</h4>
-                <p class="text-xs text-gray-400">{{ opportunity.company }}</p>
+                <p class="text-xs text-gray-400">{{ opportunity.organization }}</p>
               </div>
             </div>
           </div>
@@ -214,7 +214,7 @@ const trackViewAllOpportunities = (): void => {
             <div>
               <h3 class="text-xl font-semibold text-white">{{ activeOpportunity.title }}</h3>
               <p class="text-gray-400"
-                >{{ activeOpportunity.company }} • {{ activeOpportunity.location }}</p
+                >{{ activeOpportunity.organization }} • {{ activeOpportunity.location }}</p
               >
             </div>
             <div>

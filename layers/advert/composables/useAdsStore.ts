@@ -153,8 +153,8 @@ export const useAdsStore = defineStore('ads', () => {
         content: {
           id: ad.id,
           package_id: ad.package_id,
-          company_id: ad.company_id,
-          company: ad.company,
+          organization_id: ad.organization_id,
+          organization: ad.organization,
           variants: ad.variants,
           start_date: ad.start_date,
           end_date: ad.end_date,

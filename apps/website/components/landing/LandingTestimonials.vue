@@ -4,7 +4,7 @@ import testimonials from '@/data/home/testimonials.json'
 interface Testimonial {
   image: string
   name: string
-  company: string
+  organization: string
   quote: string
 }
 </script>
@@ -61,7 +61,7 @@ interface Testimonial {
 
                 <div class="flex flex-col pl-4">
                   <h3 class="text-xl font-semibold text-white">{{ item.name }}</h3>
-                  <p class="text-sky-400">{{ item.company }}</p>
+                  <p class="text-sky-400">{{ item.organization }}</p>
                 </div>
               </div>
 

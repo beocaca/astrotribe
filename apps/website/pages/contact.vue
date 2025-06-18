@@ -253,7 +253,7 @@
                     />
                   </a>
                   <a
-                    href="https://www.linkedin.com/company/7584381/admin/dashboard/"
+                    href="https://www.linkedin.com/organization/7584381/admin/dashboard/"
                     target="_blank"
                     class="p-2 bg-primary-800 rounded-full text-primary-400 hover:text-white hover:bg-primary-700 transition-colors flex items-center justify-center"
                   >
@@ -428,13 +428,13 @@
             </div>
             <div class="space-y-2">
               <label
-                for="company"
+                for="organization"
                 class="block text-sm font-medium"
-                >Company</label
+                >Organization</label
               >
               <PrimeInputText
-                id="company"
-                v-model="formData.company"
+                id="organization"
+                v-model="formData.organization"
                 class="w-full"
               />
             </div>
@@ -446,8 +446,8 @@
               >Preferred Date</label
             >
             <PrimeCalendar
-              v-model="formData.preferredDate"
               id="preferredDate"
+              v-model="formData.preferredDate"
             />
           </div>
           <div class="space-y-2">
@@ -534,7 +534,7 @@ const formData = ref({
   inquiryType: '',
   message: '',
   phone: '',
-  company: '',
+  organization: '',
   preferredDate: undefined,
 })
 
@@ -602,7 +602,7 @@ const submitForm = (contact_type: CONTACT_TYPE) => {
     sendForm({
       type: contact_type,
       name: formData.value.name,
-      company: formData.value.company,
+      organization: formData.value.organization,
       phone: formData.value.phone,
       email: formData.value.email,
       message: formData.value.message,
@@ -625,7 +625,7 @@ const submitForm = (contact_type: CONTACT_TYPE) => {
       inquiryType: '',
       message: '',
       phone: '',
-      company: '',
+      organization: '',
       preferredDate: undefined,
     }
   }, 1500)

@@ -23,8 +23,8 @@ interface NewsCardProps {
       tags?: string[]
       summaries?: Record<string, Array<{ id: string; summary: string; version: number }> | null>
       readTime?: number
-      company_name?: string
-      company_logo?: string
+      organization_name?: string
+      organization_logo?: string
       source_name?: string
     }
   }

@@ -11,12 +11,6 @@ const systemsTabs = [
     value: '0',
     system: 'authentication-flow',
   },
-  {
-    title: 'News',
-    slotName: 'news',
-    value: '1',
-    system: 'news-feed',
-  },
 ]
 </script>
 

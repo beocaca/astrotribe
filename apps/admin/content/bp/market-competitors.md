@@ -4,13 +4,13 @@
 
    - **Direct Competitors:**
 
-     - Online platforms offering astronomy news, courses, companies, research, events, and community
+     - Online platforms offering astronomy news, courses, organizations, research, events, and community
        interaction.'
 
      Here is a table with 20 organizations that dominate in the space of online platforms offering
-     astronomy news, courses, companies, research, events, and community interaction:
+     astronomy news, courses, organizations, research, events, and community interaction:
 
-| Company Name                           | Website                     | Industry        | Description                                                                                      |
+| Organization Name                           | Website                     | Industry        | Description                                                                                      |
 | -------------------------------------- | --------------------------- | --------------- | ------------------------------------------------------------------------------------------------ |
 | Sky & Telescope                        | www.skyandtelescope.com     | Astronomy News  | Leading source of news, observing tips, and celestial event information for amateur astronomers. |
 | Slooh                                  | www.slooh.com               | Astronomy       | Provides live, online viewing of celestial objects using robotic telescopes.                     |
@@ -41,7 +41,7 @@
   Here is a table with 20 organizations that dominate in the space of general science education
   platforms and AI-driven summarization and news aggregation tools:
 
-| Company Name      | Website                   | Industry                | Description                                                                                       |
+| Organization Name      | Website                   | Industry                | Description                                                                                       |
 | ----------------- | ------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------- |
 | Coursera          | www.coursera.org          | Online Courses          | Offers a wide range of science courses from top universities and institutions.                    |
 | edX               | www.edx.org               | Online Courses          | Provides online courses in various scientific disciplines from renowned universities.             |
@@ -100,12 +100,12 @@
 | **USGS**                                         | Satellite data and earth observation resources                                                          | [USGS](https://www.usgs.gov)                                                            |
 | **Space Foundation**                             | Annual reports on the space economy, industry trends, and forecasts                                     | [Space Foundation](https://www.spacefoundation.org)                                     |
 | **AIAA**                                         | Industry analysis, white papers, and technical publications                                             | [AIAA](https://www.aiaa.org)                                                            |
-| **Commercial Spaceflight Federation**            | Insights on commercial spaceflight companies                                                            | [Commercial Spaceflight Federation](https://www.commercialspaceflight.org)              |
+| **Commercial Spaceflight Federation**            | Insights on commercial spaceflight organizations                                                            | [Commercial Spaceflight Federation](https://www.commercialspaceflight.org)              |
 | **Frost & Sullivan**                             | Market research reports and analysis specific to the space industry                                     | [Frost & Sullivan](https://www.frost.com)                                               |
 | **Allied Market Research**                       | Reports on various aspects of the space sector, including satellite services and exploration            | [Allied Market Research](https://www.alliedmarketresearch.com)                          |
 | **NSR (Northern Sky Research)**                  | Market research and consulting services focused on the satellite and space sectors                      | [NSR](https://www.nsr.com)                                                              |
-| **Bloomberg**                                    | Financial news and data analytics specific to publicly traded companies in the space sector             | [Bloomberg](https://www.bloomberg.com)                                                  |
-| **Morningstar**                                  | Investment research and financial data on space-related companies                                       | [Morningstar](https://www.morningstar.com)                                              |
+| **Bloomberg**                                    | Financial news and data analytics specific to publicly traded organizations in the space sector             | [Bloomberg](https://www.bloomberg.com)                                                  |
+| **Morningstar**                                  | Investment research and financial data on space-related organizations                                       | [Morningstar](https://www.morningstar.com)                                              |
 | **Space Capital**                                | Quarterly reports on venture capital investments in the space economy                                   | [Space Capital](https://www.spacecapital.com)                                           |
 | **MIT Media Lab's Space Exploration Initiative** | Research and publications on space exploration technologies                                             | [MIT Media Lab](https://www.media.mit.edu/groups/space-exploration-initiative/overview) |
 | **Caltech’s Jet Propulsion Laboratory (JPL)**    | Research papers and data on space missions and technology                                               | [JPL](https://www.jpl.nasa.gov)                                                         |

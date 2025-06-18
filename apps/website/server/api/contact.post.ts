@@ -14,7 +14,7 @@ interface ContactFormDTO {
   name: string
   type: CONTACT_TYPE
   message: string
-  company?: string
+  organization?: string
   email: string
   inquiryType?: string
   phone?: string
@@ -98,7 +98,7 @@ const buildHTML = (form: ContactFormDTO) => {
       return `
         <h2>Consultation Request</h2>
         <p><strong>From:</strong> ${form.name}</p>
-        <p><strong>Company:</strong> ${form.company || 'Not provided'}</p>
+        <p><strong>Organization:</strong> ${form.organization || 'Not provided'}</p>
         <p><strong>Email:</strong> ${form.email}</p>
         <p><strong>Phone:</strong> ${form.phone || 'Not provided'}</p>
         <p><strong>Preferred Date:</strong> ${formattedDate}</p>
@@ -112,7 +112,7 @@ const buildHTML = (form: ContactFormDTO) => {
       <p><strong>From:</strong> ${form.name}</p>
       <p><strong>Email:</strong> ${form.email}</p>
       <p><strong>Inquiry Type: ${form.inquiryType}}</strong>
-      <p><strong>Company:</strong> ${form.company || 'Not Provided'}</p>
+      <p><strong>Organization:</strong> ${form.organization || 'Not Provided'}</p>
       <p><strong>Phone:</strong> ${form.phone || 'Not provided'}</p>
       <h3>Message:</h3>
       <p>${form.message || 'No message provided'}</p>
@@ -123,7 +123,7 @@ const buildHTML = (form: ContactFormDTO) => {
       <h2>Advertisment Request</h2>
       <p><strong>From:</strong> ${form.name}</p>
       <p><strong>Email:</strong> ${form.email}</p>
-      <p><strong>Company:</strong> ${form.company || 'Not Provided'}</p>
+      <p><strong>Organization:</strong> ${form.organization || 'Not Provided'}</p>
       <p><strong>Phone:</strong> ${form.phone || 'Not provided'}</p>
       <p><strong>Website:</strong> ${form.website || 'Not provided'}</p>
       <h3>Message:</h3>

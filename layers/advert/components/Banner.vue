@@ -45,7 +45,7 @@ const handleClick = async (isVisible: boolean, startTime: number) => {
           >
             <img
               :src="variant.content.background_image"
-              :alt="ad.company.name"
+              :alt="ad.organization.name"
               class="w-full h-full object-cover"
             />
             <div
@@ -57,9 +57,9 @@ const handleClick = async (isVisible: boolean, startTime: number) => {
             <div class="flex items-center gap-6">
               <div class="w-16 h-16 rounded-lg overflow-hidden bg-slate-700 flex-shrink-0">
                 <img
-                  v-if="ad.company.logo_url"
-                  :src="ad.company.logo_url"
-                  :alt="ad.company.name"
+                  v-if="ad.organization.logo_url"
+                  :src="ad.organization.logo_url"
+                  :alt="ad.organization.name"
                   class="w-full h-full object-cover"
                 />
               </div>
@@ -67,7 +67,7 @@ const handleClick = async (isVisible: boolean, startTime: number) => {
                 <div class="flex items-center gap-2 mb-1">
                   <span class="text-xs font-medium text-blue-400">SPONSORED</span>
                   <span class="text-blue-200">•</span>
-                  <span class="text-sm text-blue-200">{{ ad.company.name }}</span>
+                  <span class="text-sm text-blue-200">{{ ad.organization.name }}</span>
                 </div>
                 <h3 class="text-xl font-bold text-white mb-1">{{ variant.content.title }}</h3>
                 <p class="text-blue-200 text-sm line-clamp-2">{{ variant.content.description }}</p>

@@ -41,7 +41,7 @@ const toggleBanner = () => {
         <div class="flex-grow space-y-2 text-center md:text-left">
           <h3 class="text-xl font-semibold">Hi 👋, I'm Shweta</h3>
           <p class="text-sm">
-            We're showcasing the amazing people and companies pushing astronomy and space
+            We're showcasing the amazing people and organizations pushing astronomy and space
             exploration forward.
             <strong>If this sounds like you or someone you know, let's connect!</strong>
           </p>

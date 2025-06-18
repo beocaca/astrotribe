@@ -67,7 +67,7 @@ import {
 // Razorpay is only showing transactions to the 21st month
 // input and output cost for GPT is the same??
 
-export type CompanyStage = 'start' | 'growth' | 'scaling' | 'secure'
+export type OrganizationStage = 'start' | 'growth' | 'scaling' | 'secure'
 export type Content = 'NEWS' | 'RESEARCH_ABSTRACTS' | 'RESEARCH_PAPERS' | 'JOBS' | 'COMPANIES'
 export type StageConfig = Record<Content, ProcessdContentConfig>
 
@@ -127,7 +127,7 @@ function scaleContentConfig(
   return scaledConfig
 }
 
-function determineCompanyStage(mau: number): CompanyStage {
+function determineOrganizationStage(mau: number): OrganizationStage {
   if (mau < 10000) return 'start'
   if (mau < 100000) return 'growth'
   if (mau < 500000) return 'scaling'
@@ -208,7 +208,7 @@ export interface AllData {
   openAI: any[]
   metrics: AllMetrics[]
   months: number[]
-  stages: CompanyStage[]
+  stages: OrganizationStage[]
 }
 
 export function calculateBusinessMetrics(params: BusinessMetricsConfig): AllData {
@@ -276,7 +276,7 @@ export function calculateBusinessMetrics(params: BusinessMetricsConfig): AllData
     const newMAU = mau - (previousMonth.mau.total - churnedMAU)
     mau -= churnedMAU
 
-    const companyStage = determineCompanyStage(previousMonth.mau.total)
+    const organizationStage = determineOrganizationStage(previousMonth.mau.total)
 
     const revenue = calculateRevenue({
       mau: {
@@ -332,7 +332,7 @@ export function calculateBusinessMetrics(params: BusinessMetricsConfig): AllData
 
     const employees = calculateEmployeeCost({
       mau,
-      stage: companyStage,
+      stage: organizationStage,
       month: month,
       bootstrapMonths: params.BOOTSTRAP_MONTHS,
     })
@@ -451,7 +451,7 @@ export function calculateBusinessMetrics(params: BusinessMetricsConfig): AllData
     allData.revenue.push(revenue)
     allData.customers.push(revenue.customers)
     allData.months.push(month)
-    allData.stages.push(companyStage)
+    allData.stages.push(organizationStage)
 
     previousMonth = {
       revenue: metrics.monthlyRecurringRevenue.effective,

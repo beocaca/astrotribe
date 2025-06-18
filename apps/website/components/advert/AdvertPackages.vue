@@ -4,7 +4,7 @@ const props = defineProps<{ openModal: () => void }>()
 
 // Define the profile types and active tab
 const profileTypes = [
-  { id: 'space-tech', label: 'Space-Tech Companies' },
+  { id: 'space-tech', label: 'Space-Tech Organizations' },
   { id: 'institution', label: 'Institutions' },
   { id: 'events', label: 'Events/Workshops' },
   { id: 'researcher', label: 'Researchers' },
@@ -61,7 +61,7 @@ const profilePackages = {
       title: 'Premium Exposure',
       price: '₹25,000',
       description:
-        'Comprehensive promotion for established space-tech companies looking for maximum visibility.',
+        'Comprehensive promotion for established space-tech organizations looking for maximum visibility.',
       features: [
         {
           icon: 'i-lucide-users',

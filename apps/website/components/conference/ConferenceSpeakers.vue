@@ -106,7 +106,7 @@ const speakers = [
         She encouraged support for organizations like the International Dark-sky Association (IDA),
         which actively promotes responsible outdoor lighting and the preservation of dark skies.
         Additionally, Ms. George advocated for increased involvement from stakeholders,
-        companies, and government bodies to engage in discussions and collaborate on
+        organizations, and government bodies to engage in discussions and collaborate on
         implementable solutions to address the issue of light pollution.`,
     },
     avatar: 'neethu-george',
@@ -233,13 +233,13 @@ const speakers = [
     given_name: 'David',
     surname: 'Ault',
     professional_title: 'Director of Education For Immersive Experiences',
-    bio: `David is the Director of Education for Immersive Experiences, a UK planetarium and interactives company with a global footprint.
+    bio: `David is the Director of Education for Immersive Experiences, a UK planetarium and interactives organization with a global footprint.
     With an astrophysics degree from Cambridge University, he entered the planetarium space in 2006, organising science festivals and starting a number of astronomy podcasts.`,
     abstract: {
       title: 'The planetarium as a creative space',
       description: `David Ault, the Director of Education for Immersive
         Experiences, a UK-based planetarium and interactives
-        company, adeptly showcased the use of domes as an
+        organization, adeptly showcased the use of domes as an
         interactive tool for educating intricate concepts in
         astronomy. Through collaborative discussions,
         plans were formulated to deploy these inflatable
@@ -267,7 +267,7 @@ const speakers = [
         Development in Rural Areas." She highlighted the
         immense potential of astro tourism in involving,
         educating, and uplifting rural populations. Ms Manikumar emphasized that rural areas still
-        have the privilege of having dark skies, which can be leveraged by tourism companies
+        have the privilege of having dark skies, which can be leveraged by tourism organizations
         through collaborations with the rural population. This, in turn, can help improve the social
         and economic conditions of these areas.
         `,

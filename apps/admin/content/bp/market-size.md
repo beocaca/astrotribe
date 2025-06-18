@@ -6,7 +6,7 @@
 
 Based on various sources, the current global space sector workforce in 2024 is estimated to be
 between **400,000 to 1 million** employees. This includes roles in government space agencies,
-private sector companies, and related industries such as manufacturing, research, and services.
+private sector organizations, and related industries such as manufacturing, research, and services.
 
 #### Projected Workforce (2035):
 
@@ -19,8 +19,8 @@ activities, increased private investment, and government initiatives.
 | **Key Factor**                           | **Description**                                                                                                      | **Impact on Workforce**                                                                                              |
 | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | **Technological Advances**               | Innovations such as reusable launch vehicles, SmallSats, CubeSats, and satellite constellations.                     | Lower costs and increased demand for technical expertise in manufacturing and operations.                            |
-| **Private Sector Investment**            | Significant venture capital and private equity investments driving commercial space ventures.                        | Job creation in startups and established companies focusing on space infrastructure, services, and new applications. |
-| **Public-Private Partnerships**          | Collaboration between government agencies and private companies to share costs and risks.                            | Enhanced sustainability and affordability of space missions, leading to steady job growth.                           |
+| **Private Sector Investment**            | Significant venture capital and private equity investments driving commercial space ventures.                        | Job creation in startups and established organizations focusing on space infrastructure, services, and new applications. |
+| **Public-Private Partnerships**          | Collaboration between government agencies and private organizations to share costs and risks.                            | Enhanced sustainability and affordability of space missions, leading to steady job growth.                           |
 | **Rising Demand for Space Data**         | Increasing use of space data in various sectors including defense, environmental monitoring, and telecommunications. | Growth in jobs related to data analysis, satellite operations, and software development.                             |
 | **Space Infrastructure and Services**    | Expansion of satellite communication, Earth observation, and space tourism.                                          | Creation of new jobs in satellite manufacturing, ground services, and customer support.                              |
 | **Global Strategic Importance**          | Space activities becoming crucial for national defense, climate monitoring, and connectivity.                        | Increased government spending on space programs, boosting employment in public agencies and defense contractors.     |
@@ -219,12 +219,12 @@ This estimation provides a reasonable range, considering India's significant pop
 interest in astronomy, further supported by active astronomy clubs and educational outreach
 programs.
 
-## Companies
+## Organizations
 
 1. **Commercial Space Sector:**
 
    - **Private Investment:** The commercial space sector has seen a surge in private investments,
-     with entrepreneurs like Elon Musk and Jeff Bezos driving innovation through companies like
+     with entrepreneurs like Elon Musk and Jeff Bezos driving innovation through organizations like
      SpaceX and Blue Origin. This influx of capital has led to advancements in reusable rocket
      systems, satellite miniaturization, and autonomous systems, significantly reducing launch costs
      and increasing accessibility.

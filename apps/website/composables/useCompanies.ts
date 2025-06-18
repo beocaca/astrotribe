@@ -1,7 +1,7 @@
 import { ref, computed } from 'vue'
 import { usePersona } from './usePersona'
 
-export interface Company {
+export interface Organization {
   id: number
   name: string
   logo: string
@@ -17,16 +17,17 @@ export interface Company {
   highlights: string[]
 }
 
-export function useCompanies() {
+export function useOrganizations() {
   const { activePersona } = usePersona()
 
-  // Mock data for companies
-  const allCompanies = ref<Company[]>([
+  // Mock data for organizations
+  const allOrganizations = ref<Organization[]>([
     {
       id: 1,
       name: 'SpaceX',
-      logo: '/images/companies/spacex.png',
-      description: 'American aerospace manufacturer and space transportation services company.',
+      logo: '/images/organizations/spacex.png',
+      description:
+        'American aerospace manufacturer and space transportation services organization.',
       industry: 'Aerospace',
       location: 'Hawthorne, California',
       founded: 2002,
@@ -45,8 +46,9 @@ export function useCompanies() {
     {
       id: 2,
       name: 'NASA',
-      logo: '/images/companies/nasa.png',
-      description: 'The National Aeronautics and Space Administration is America\'s civil space program and the global leader in space exploration.',
+      logo: '/images/organizations/nasa.png',
+      description:
+        "The National Aeronautics and Space Administration is America's civil space program and the global leader in space exploration.",
       industry: 'Government Agency',
       location: 'Washington, D.C.',
       founded: 1958,
@@ -65,8 +67,9 @@ export function useCompanies() {
     {
       id: 3,
       name: 'Astronomical Society',
-      logo: '/images/companies/astronomical-society.png',
-      description: 'Professional organization of astronomers and other scientists dedicated to the advancement of astronomy and geophysics.',
+      logo: '/images/organizations/astronomical-society.png',
+      description:
+        'Professional organization of astronomers and other scientists dedicated to the advancement of astronomy and geophysics.',
       industry: 'Non-profit',
       location: 'London, UK',
       founded: 1820,
@@ -84,37 +87,39 @@ export function useCompanies() {
     },
   ])
 
-  // Filter companies alphabetically
-  const companies = computed(() => {
-    return [...allCompanies.value].sort((a, b) => a.name.localeCompare(b.name))
+  // Filter organizations alphabetically
+  const organizations = computed(() => {
+    return [...allOrganizations.value].sort((a, b) => a.name.localeCompare(b.name))
   })
 
-  // Get persona-specific company
-  const personaCompany = computed(() => {
+  // Get persona-specific organization
+  const personaOrganization = computed(() => {
     if (!activePersona.value) return null
     const personaName = activePersona.value.name.toLowerCase()
-    return allCompanies.value.find(
-      (company) => company.bestFor.toLowerCase() === personaName
-    ) || null
+    return (
+      allOrganizations.value.find(
+        (organization) => organization.bestFor.toLowerCase() === personaName,
+      ) || null
+    )
   })
 
-  // Get company by ID
-  const getCompanyById = (companyId: number): Company | null => {
-    return allCompanies.value.find((company) => company.id === companyId) || null
+  // Get organization by ID
+  const getOrganizationById = (organizationId: number): Organization | null => {
+    return allOrganizations.value.find((organization) => organization.id === organizationId) || null
   }
 
-  // Visit company website
-  const visitWebsite = (company: Company): void => {
-    if (company.website) {
-      window.open(company.website, '_blank')
+  // Visit organization website
+  const visitWebsite = (organization: Organization): void => {
+    if (organization.website) {
+      window.open(organization.website, '_blank')
     }
   }
 
   return {
-    allCompanies: allCompanies.value,
-    companies,
-    personaCompany,
-    getCompanyById,
+    allOrganizations: allOrganizations.value,
+    organizations,
+    personaOrganization,
+    getOrganizationById,
     visitWebsite,
   }
 }

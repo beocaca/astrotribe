@@ -134,7 +134,7 @@ const charts = computed(() => {
             borderColor: rgba('darkRed', 0.5),
           },
           {
-            label: 'Companies',
+            label: 'Organizations',
             valueType: 'storage',
             data: storageDetails.value.flatMap((detail) =>
               detail.content.type === 'COMPANIES' ? detail.storage.total : [],

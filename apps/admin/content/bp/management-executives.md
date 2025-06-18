@@ -2,8 +2,8 @@
 
 1. **Chief Executive Officer (CEO)**
 
-   - Role: Overall strategic direction and leadership of the company.
-   - Responsibilities: Vision and mission alignment, stakeholder management, overall company
+   - Role: Overall strategic direction and leadership of the organization.
+   - Responsibilities: Vision and mission alignment, stakeholder management, overall organization
      performance, key decision-making.
 
 2. **Chief Technology Officer (CTO)**

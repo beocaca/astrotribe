@@ -26,7 +26,7 @@
      agencies or investors for funding. Target startups, non-profits, and research projects,
      facilitating connections with organizations like IAU and private investors.
 
-5. **Integrate Chatbot for Companies - B Tier:**
-   - **Integration:** Allow companies to use our data for their website visitors to ask questions,
+5. **Integrate Chatbot for Organizations - B Tier:**
+   - **Integration:** Allow organizations to use our data for their website visitors to ask questions,
      providing answers based on our comprehensive data sets, including news, business documents, and
      more.

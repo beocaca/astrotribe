@@ -70,7 +70,7 @@
         <!-- Sidebar skeleton -->
         <div class="h-full">
           <div class="space-y-6">
-            <!-- Company card skeleton -->
+            <!-- Organization card skeleton -->
             <div class="bg-gray-800 rounded-2xl p-8 relative overflow-hidden">
               <div class="space-y-4">
                 <div class="h-6 w-1/2 bg-gray-700 rounded-md"></div>

@@ -1,4 +1,4 @@
-#### Company History and Background
+#### Organization History and Background
 
 1. **Founding Details:**
 

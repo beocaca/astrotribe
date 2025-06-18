@@ -13,8 +13,8 @@
    - **AI and Data Processing Costs:**
      - News Articles: 10,000 articles/month \* $0.02 = $200
      - Research Papers: 2,000 papers/month \* $0.03 = $60
-     - Company Scraping: 1,000 companies \* $1 = $1,000
-     - Ongoing Company Monitoring: 1,000 companies \* $0.50/year = $500/year
+     - Organization Scraping: 1,000 organizations \* $1 = $1,000
+     - Ongoing Organization Monitoring: 1,000 organizations \* $0.50/year = $500/year
    - **Customer Support and Service Costs:**
      - Year 1: 1 agent \* ₹40k/month = ₹40k/month
      - Year 2: 10 agents \* ₹40k/month = ₹4 lakh/month
@@ -192,5 +192,5 @@ information into one comprehensive table.
 - **Year 10**: 83 employees
 
 This table provides a comprehensive year-by-year breakdown of financial projections and employee
-growth, ensuring a clear roadmap for scaling the company while maintaining focus on core software
+growth, ensuring a clear roadmap for scaling the organization while maintaining focus on core software
 development and supporting roles.

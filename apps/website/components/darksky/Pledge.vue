@@ -317,7 +317,7 @@ const { stars, isClient } = useStarfield(30, 3)
             <PrimeInputText
               id="organization"
               v-model="formData.organization"
-              placeholder="Company or organization name"
+              placeholder="Organization or organization name"
               name="organization"
               class="w-full"
             />

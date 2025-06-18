@@ -8,8 +8,9 @@
         >AstronEra proudly presents India's Dark Sky Policy & Sustainability Symposium, a platform
         dedicated to tackling the critical issue of light pollution. Excessive artificial lighting
         disrupts ecosystems, harms human health, wastes energy, and diminishes cultural and
-        astronomical heritage. This event aims to bring together policymakers, lighting companies,
-        and global experts to inspire actionable solutions for India, starting with Maharashtra.
+        astronomical heritage. This event aims to bring together policymakers, lighting
+        organizations, and global experts to inspire actionable solutions for India, starting with
+        Maharashtra.
       </p>
     </CommonTitle>
     <CommonTitle
@@ -71,7 +72,7 @@
       :title="{ main: 'Be the Changemaker' }"
     >
       <p
-        >This symposium offers a unique opportunity for, policymakers, and lighting companies to
+        >This symposium offers a unique opportunity for, policymakers, and lighting organizations to
         take a leadership role in combating light pollution. Together, let's create a sustainable
         future by preserving our nightscapes.</p
       >

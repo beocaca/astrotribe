@@ -8,7 +8,7 @@
 
 #### Private Sector Investment
 
-- **Investment**: $272 billion since 2013 in 1,791 companies.
+- **Investment**: $272 billion since 2013 in 1,791 organizations.
 - **U.S. National Security Space Budget**: $20.8 billion in FY23, a 19.5% increase.
 - **LEO Satellites**: Over 5,000 by end of 2023, potentially 40,000-50,000 by 2030.
 
@@ -35,7 +35,7 @@
 #### Industry Growth
 
 - **Public-Private Collaboration**: Essential for leveraging investments.
-- **Emerging Trends**: Expansion of private companies, space data services, in-space manufacturing.
+- **Emerging Trends**: Expansion of private organizations, space data services, in-space manufacturing.
 - **Future Business Models**: Higher volume, lower cost, standardized offerings.
 
 #### Key Statistics
@@ -46,7 +46,7 @@
 - **U.S. Space Budget**: $20.8 billion in FY23.
 - **LEO Satellites**: Over 5,000 by end of 2023.
 - **Space Data**: Expected to grow to over 500 exabytes by 2030.
-- **Executive Belief**: 98% foresee increased demand for space data and private company expansion.
+- **Executive Belief**: 98% foresee increased demand for space data and private organization expansion.
 
 ### Global Space Technology Market
 

@@ -14,7 +14,7 @@
 2. **Weaknesses:**
 
    - Limited initial market presence / awareness.
-   - No previous experience scaling a company to a global level.
+   - No previous experience scaling a organization to a global level.
    - Lack of manpower.
    - Lack of experience with largescale software
 
@@ -23,7 +23,7 @@
    - Expanding interest in astronomy and space exploration.
    - Growing market for online presence and SaaS solutions.
    - Potential partnerships with educational institutions, research organizations, private
-     companies, government organizations, public figures, and expert individuals.
+     organizations, government organizations, public figures, and expert individuals.
      - **Weaknesses of Competitors:**
 
 - Limited use of AI for personalized content.

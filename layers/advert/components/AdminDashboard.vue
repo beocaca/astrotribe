@@ -194,8 +194,8 @@ watch(dialogVisible, (newValue) => {
         @row-click="(e) => handleAdSelect(e.data)"
       >
         <PrimeColumn
-          field="company_name"
-          header="Company"
+          field="organization_name"
+          header="Organization"
         />
         <PrimeColumn
           field="title"

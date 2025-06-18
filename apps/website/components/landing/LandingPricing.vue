@@ -26,8 +26,8 @@ const comingSoon = [
     icon: 'mdi:robot-outline',
   },
   {
-    text: 'Space Company Profiles',
-    description: 'Track developments from leading space companies',
+    text: 'Space Organization Profiles',
+    description: 'Track developments from leading space organizations',
     icon: 'mdi:office-building-outline',
   },
 ]

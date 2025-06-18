@@ -12,7 +12,7 @@
 
    - Co-branded content
    - Sponsored advertising
-   - Connecting universities to companies for internships
+   - Connecting universities to organizations for internships
 
 3. **Benefits of Partnerships:**
    - Expanded reach
@@ -27,7 +27,7 @@
 
 1. **Potential Partners:**
 
-   - Expand potential partner list to include tech companies, online learning platforms, and content
+   - Expand potential partner list to include tech organizations, online learning platforms, and content
      creators in related fields.
 
 2. **Collaboration Opportunities:**

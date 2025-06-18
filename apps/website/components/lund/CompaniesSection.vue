@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import { usePersona } from '~/composables/usePersona'
-import { useCompanies, type Company } from '~/composables/useCompanies'
+import { useOrganizations, type Organization } from '~/composables/useOrganizations'
 import { useAnimation } from '~/composables/useAnimation'
 import { useAnalytics } from '#imports'
 
@@ -11,68 +11,69 @@ const { trackUserEngagement, UserEngagementMetric } = useAnalytics()
 // Get persona state from our composable
 const { activePersona, personaStyles } = usePersona()
 
-// Get companies from our composable
-const { allCompanies, companies, personaCompany, getCompanyById, visitWebsite } = useCompanies()
+// Get organizations from our composable
+const { allOrganizations, organizations, personaOrganization, getOrganizationById, visitWebsite } =
+  useOrganizations()
 
-// Active company state
-const activeCompany = ref<Company | null>(null)
+// Active organization state
+const activeOrganization = ref<Organization | null>(null)
 
-// Initialize active company based on persona
-const getInitialCompany = (): Company | null => {
-  // First try to get the persona-specific company
-  if (personaCompany.value) return personaCompany.value
+// Initialize active organization based on persona
+const getInitialOrganization = (): Organization | null => {
+  // First try to get the persona-specific organization
+  if (personaOrganization.value) return personaOrganization.value
 
-  // If no persona-specific company, get the first company
-  if (companies.value.length > 0) {
-    return companies.value[0] || null
+  // If no persona-specific organization, get the first organization
+  if (organizations.value.length > 0) {
+    return organizations.value[0] || null
   }
 
   return null
 }
 
-// Set initial active company
-activeCompany.value = getInitialCompany()
+// Set initial active organization
+activeOrganization.value = getInitialOrganization()
 
-// Update active company when persona changes
+// Update active organization when persona changes
 watch(
   () => activePersona.value,
   () => {
-    activeCompany.value = getInitialCompany()
+    activeOrganization.value = getInitialOrganization()
   },
 )
 
-// Select a specific company
-const selectCompany = (companyId: number): void => {
-  const company = getCompanyById(companyId)
-  if (company) {
-    activeCompany.value = company
+// Select a specific organization
+const selectOrganization = (organizationId: number): void => {
+  const organization = getOrganizationById(organizationId)
+  if (organization) {
+    activeOrganization.value = organization
 
-    // Track company selection
+    // Track organization selection
     trackUserEngagement(UserEngagementMetric.ActionsPerSession, {
-      action: 'select_company',
-      company_id: company.id,
-      company_name: company.name,
+      action: 'select_organization',
+      organization_id: organization.id,
+      organization_name: organization.name,
     })
   }
 }
 
 // Handle visit website button click
-const handleVisitWebsite = (company: Company): void => {
+const handleVisitWebsite = (organization: Organization): void => {
   // Track the action
   trackUserEngagement(UserEngagementMetric.ActionsPerSession, {
-    action: 'visit_company_website',
-    company_id: company.id,
-    company_name: company.name,
+    action: 'visit_organization_website',
+    organization_id: organization.id,
+    organization_name: organization.name,
   })
 
   // Use the composable method to open the website
-  visitWebsite(company)
+  visitWebsite(organization)
 }
 
-// Track when users click "View All Companies"
-const trackViewAllCompanies = (): void => {
+// Track when users click "View All Organizations"
+const trackViewAllOrganizations = (): void => {
   trackUserEngagement(UserEngagementMetric.ActionsPerSession, {
-    action: 'view_all_companies',
+    action: 'view_all_organizations',
     persona: activePersona.value?.name || 'unknown',
   })
 }
@@ -131,36 +132,36 @@ const trackViewAllCompanies = (): void => {
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
           <div
-            v-for="company in allCompanies"
-            :key="`rec-${company.id}`"
+            v-for="organization in allOrganizations"
+            :key="`rec-${organization.id}`"
             class="bg-slate-900/40 backdrop-blur-sm rounded-lg border border-slate-800/50 p-4 transition-all duration-300 cursor-pointer"
             :class="
-              activeCompany && company.id === activeCompany.id
-                ? `border-${company.color}-500/50 bg-${company.color}-900/20`
-                : `hover:border-${company.color}-800/30`
+              activeOrganization && organization.id === activeorganization.id
+                ? `border-${organization.color}-500/50 bg-${organization.color}-900/20`
+                : `hover:border-${organization.color}-800/30`
             "
-            @click="selectCompany(company.id)"
+            @click="selectOrganization(organization.id)"
           >
             <div class="flex items-center gap-3 mb-2">
               <div
                 class="w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-500"
-                :class="`bg-${company.color}-900/50 text-${company.color}-500`"
+                :class="`bg-${organization.color}-900/50 text-${organization.color}-500`"
               >
                 <Icon
-                  :name="company.icon"
+                  :name="organization.icon"
                   size="16"
                 />
               </div>
               <div class="text-left">
-                <h4 class="font-medium text-white text-sm">{{ company.name }}</h4>
-                <p class="text-xs text-gray-400">{{ company.industry }}</p>
+                <h4 class="font-medium text-white text-sm">{{ organization.name }}</h4>
+                <p class="text-xs text-gray-400">{{ organization.industry }}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Company selection tabs -->
+      <!-- Organization selection tabs -->
       <div
         v-motion
         :initial="{ opacity: 0, y: 20 }"
@@ -168,27 +169,27 @@ const trackViewAllCompanies = (): void => {
         class="flex flex-wrap justify-center gap-3 mb-10"
       >
         <button
-          v-for="company in companies"
-          :key="company.id"
+          v-for="organization in organizations"
+          :key="organization.id"
           class="px-4 py-2 rounded-full transition-all duration-300 flex items-center gap-2"
           :class="
-            activeCompany && activeCompany.id === company.id
-              ? `bg-${company.color}-500/20 text-${company.color}-300 border border-${company.color}-500/30`
+            activeOrganization && activeorganization.id === organization.id
+              ? `bg-${organization.color}-500/20 text-${organization.color}-300 border border-${organization.color}-500/30`
               : 'bg-slate-800/30 text-gray-400 border border-slate-700/20 hover:bg-slate-800/50'
           "
-          @click="selectCompany(company.id)"
+          @click="selectOrganization(organization.id)"
         >
           <Icon
-            :name="company.icon"
+            :name="organization.icon"
             size="16"
           />
-          {{ company.name }}
+          {{ organization.name }}
         </button>
       </div>
 
-      <!-- Company details display -->
+      <!-- Organization details display -->
       <div
-        v-if="activeCompany"
+        v-if="activeOrganization"
         v-motion
         :initial="{ opacity: 0, y: 30 }"
         :visibleOnce="{ opacity: 1, y: 0, transition: { delay: 0.4 } }"
@@ -196,51 +197,51 @@ const trackViewAllCompanies = (): void => {
       >
         <div
           class="rounded-xl bg-slate-900/60 backdrop-blur-sm border border-slate-800/50 overflow-hidden transition-all duration-500"
-          :class="`border-${activeCompany.color}-800/30 shadow-xl shadow-${activeCompany.color}-900/10`"
+          :class="`border-${activeOrganization.color}-800/30 shadow-xl shadow-${activeOrganization.color}-900/10`"
         >
-          <!-- Company header -->
+          <!-- Organization header -->
           <div
             class="px-6 py-4 border-b border-slate-800/30 flex items-center justify-between transition-colors duration-500"
-            :class="`bg-${activeCompany.color}-900/20`"
+            :class="`bg-${activeOrganization.color}-900/20`"
           >
             <div class="flex items-center gap-4">
               <div
                 class="w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-500"
-                :class="`bg-${activeCompany.color}-900/50 text-${activeCompany.color}-500`"
+                :class="`bg-${activeOrganization.color}-900/50 text-${activeOrganization.color}-500`"
               >
                 <Icon
-                  :name="activeCompany.icon"
+                  :name="activeOrganization.icon"
                   size="24"
                 />
               </div>
               <div>
-                <h3 class="text-xl font-semibold text-white">{{ activeCompany.name }}</h3>
+                <h3 class="text-xl font-semibold text-white">{{ activeOrganization.name }}</h3>
                 <p class="text-gray-400"
-                  >{{ activeCompany.industry }} • {{ activeCompany.location }}</p
+                  >{{ activeOrganization.industry }} • {{ activeOrganization.location }}</p
                 >
               </div>
             </div>
             <div>
               <span
                 class="px-3 py-1 rounded-full text-xs font-medium transition-colors duration-500"
-                :class="`bg-${activeCompany.color}-900/50 text-${activeCompany.color}-400 border border-${activeCompany.color}-800/30`"
+                :class="`bg-${activeOrganization.color}-900/50 text-${activeOrganization.color}-400 border border-${activeOrganization.color}-800/30`"
               >
-                Est. {{ activeCompany.founded }}
+                Est. {{ activeOrganization.founded }}
               </span>
             </div>
           </div>
 
-          <!-- Company details -->
+          <!-- Organization details -->
           <div class="p-6">
             <div class="mb-6">
-              <p class="text-gray-300">{{ activeCompany.description }}</p>
+              <p class="text-gray-300">{{ activeOrganization.description }}</p>
             </div>
 
             <div class="mb-6">
               <h4 class="text-lg font-medium text-white mb-2">Highlights</h4>
               <ul class="text-gray-300 list-disc pl-5 space-y-1">
                 <li
-                  v-for="(highlight, index) in activeCompany.highlights"
+                  v-for="(highlight, index) in activeOrganization.highlights"
                   :key="index"
                 >
                   {{ highlight }}
@@ -250,14 +251,14 @@ const trackViewAllCompanies = (): void => {
 
             <div class="flex flex-wrap justify-between items-center">
               <div class="mb-4 md:mb-0">
-                <div class="text-sm text-gray-400 mb-1">Company Size</div>
-                <div class="text-white font-medium">{{ activeCompany.size }}</div>
+                <div class="text-sm text-gray-400 mb-1">Organization Size</div>
+                <div class="text-white font-medium">{{ activeOrganization.size }}</div>
               </div>
 
               <PrimeButton
                 class="transition-colors duration-500"
                 :class="personaStyles.primaryButton"
-                @click="handleVisitWebsite(activeCompany)"
+                @click="handleVisitWebsite(activeOrganization)"
               >
                 <Icon
                   name="mdi:web"
@@ -271,13 +272,13 @@ const trackViewAllCompanies = (): void => {
         </div>
       </div>
 
-      <!-- View All Companies button moved to bottom as CTA -->
+      <!-- View All Organizations button moved to bottom as CTA -->
       <div class="mt-12 text-center">
         <PrimeButton
           size="large"
           class="transition-colors duration-500"
           :class="personaStyles.primaryButton"
-          @click="trackViewAllCompanies"
+          @click="trackViewAllOrganizations"
         >
           <Icon
             name="mdi:office-building"

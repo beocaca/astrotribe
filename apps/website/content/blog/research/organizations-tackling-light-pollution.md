@@ -1,7 +1,7 @@
 ---
 title: Organizations Tackling Light Pollution
 description: >-
-  A comprehensive survey of organizations, companies, and government initiatives dedicated to
+  A comprehensive survey of organizations, organizations, and government initiatives dedicated to
   conserving the night sky by reducing light pollution.
 createdAt: '2025-03-28T22:58:45.450Z'
 publishedAt: '2025-03-28T22:58:45.450Z'
@@ -17,11 +17,11 @@ draft: false
 ### Key Points
 
 - Research suggests there are numerous major organizations, including NGOs, government bodies,
-  companies, and projects, working globally to conserve the night sky by reducing light pollution.
+  organizations, and projects, working globally to conserve the night sky by reducing light pollution.
 - It seems likely that key players include DarkSky International, with over 70 chapters worldwide,
   and government initiatives like the U.S. National Park Service, which has certified over 30 parks
   as International Dark Sky Parks.
-- The evidence leans toward significant contributions from companies like Musco Lighting, producing
+- The evidence leans toward significant contributions from organizations like Musco Lighting, producing
   dark sky-compliant lighting, and international efforts like the IUCN Dark Skies Advisory Group,
   certifying over 325 dark sky places.
 - An unexpected detail is the involvement of cognac producer House of Rémy Martin, supporting dark
@@ -37,7 +37,7 @@ founding, projects, and achievements.
 
 Night sky conservation involves reducing light pollution to protect astronomical observations,
 wildlife, and human health. Organizations range from NGOs advocating for better lighting to
-companies manufacturing dark sky-friendly products and government bodies managing protected areas.
+organizations manufacturing dark sky-friendly products and government bodies managing protected areas.
 
 #### Key Organizations
 
@@ -56,7 +56,7 @@ companies manufacturing dark sky-friendly products and government bodies managin
   ([IUCN Dark Skies Advisory Group](https://darkskyparks.org/)).
 - **Royal Astronomical Society of Canada (RASC)**, founded in 1868, runs the Dark-Sky Sites Program,
   designating sites across Canada ([Royal Astronomical Society of Canada](https://www.rasc.ca/)).
-- **Musco Lighting**, a company since 1976 in the USA, develops dark sky-compliant lighting for
+- **Musco Lighting**, a organization since 1976 in the USA, develops dark sky-compliant lighting for
   sports and transportation, with over 1,000 employees ([Musco Lighting](https://www.musco.com/)).
 - **Forms+Surfaces**, founded in 1964 in the USA, produces DarkSky-approved lighting, with about 386
   employees ([Forms+Surfaces](https://www.forms-surfaces.com/)).
@@ -71,7 +71,7 @@ sky remains a natural resource for future generations.
 
 ### Comprehensive Survey Note on Organizations Working to Conserve the Night Sky
 
-This survey note provides a detailed examination of major companies, government organizations, NGOs,
+This survey note provides a detailed examination of major organizations, government organizations, NGOs,
 and projects dedicated to conserving the night sky through reducing light pollution, a critical
 issue affecting astronomical observations, wildlife, and human health. It encompasses a broad range
 of entities, reflecting global efforts to preserve natural darkness, and includes insights into
@@ -94,8 +94,8 @@ provide a comprehensive resource for researchers, policymakers, and enthusiasts.
 The selection of organizations involved a systematic review of available literature and web
 resources, focusing on entities explicitly mentioned in connection with dark sky conservation.
 Searches included keywords like "dark sky conservation organizations," "light pollution reduction
-companies," and "government dark sky initiatives," with an emphasis on major players across
-categories: NGOs, government bodies, companies, and projects. The nine organizations chosen
+organizations," and "government dark sky initiatives," with an emphasis on major players across
+categories: NGOs, government bodies, organizations, and projects. The nine organizations chosen
 illustrate diverse approaches, from certification programs to manufacturing solutions, and represent
 contributions from the USA, Canada, and global efforts.
 
@@ -113,8 +113,8 @@ relevant information, ensuring a comprehensive overview for stakeholders.
 | National Park Service                       | 1916          | USA     | Government                 | - Night Skies Program<br>- Certification of parks as dark sky parks                                    | - Over 30 parks certified as International Dark Sky Parks                                   | N/A                  | Manages national parks in the USA            |
 | IUCN Dark Skies Advisory Group              | 2009          | Global  | International Organization | - Classification of dark sky places<br>- Reports on light pollution                                    | - Developed class system for dark sky places<br>- Supports conservation efforts             | N/A                  | Part of IUCN                                 |
 | Royal Astronomical Society of Canada (RASC) | 1868          | Canada  | NGO                        | - Dark-Sky Sites Program                                                                               | - Designates dark-sky sites across Canada<br>- Educates on light pollution                  | Over 600 members     | Largest astronomy club in Canada             |
-| Musco Lighting                              | 1976          | USA     | Company                    | - Dark sky-compliant lighting systems                                                                  | - Installed systems minimizing light pollution in various facilities                        | Over 1,000 employees | Privately-held, global operations            |
-| Forms+Surfaces                              | 1964          | USA     | Company                    | - DarkSky-approved lighting products                                                                   | - Offers products that reduce light pollution                                               | ~386 employees       | Based in Pittsburgh, PA                      |
+| Musco Lighting                              | 1976          | USA     | Organization                    | - Dark sky-compliant lighting systems                                                                  | - Installed systems minimizing light pollution in various facilities                        | Over 1,000 employees | Privately-held, global operations            |
+| Forms+Surfaces                              | 1964          | USA     | Organization                    | - DarkSky-approved lighting products                                                                   | - Offers products that reduce light pollution                                               | ~386 employees       | Based in Pittsburgh, PA                      |
 | Illuminating Engineering Society (IES)      | 1906          | USA     | Professional Society       | - Model Lighting Ordinance<br>- Five Principles for Responsible Outdoor Lighting                       | - Developed standards for responsible lighting<br>- Collaborates with DarkSky International | N/A                  | Leading organization in lighting engineering |
 
 #### Institutional and Geographical Insights
@@ -124,7 +124,7 @@ DarkSky International, National Park Service, Musco Lighting), Canada (e.g., RAS
 international bodies like the IUCN. The USA dominates with multiple government and private sector
 initiatives, reflecting its large number of national parks and urban areas affected by light
 pollution. Canada's RASC highlights regional leadership, particularly in designating dark-sky sites,
-while the IUCN's DSAG underscores global coordination. Companies like Musco and Forms+Surfaces
+while the IUCN's DSAG underscores global coordination. Organizations like Musco and Forms+Surfaces
 illustrate corporate involvement, with Musco's global operations and Forms+Surfaces' focus on
 architectural solutions.
 

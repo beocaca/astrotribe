@@ -6,10 +6,10 @@
      - **Free Tier:**
        - Access to basic news summarization, basic AI questions, and limited agents using free or
          low-cost LLMs.
-       - Access to root content such as news, research, companies, events, courses, etc.
+       - Access to root content such as news, research, organizations, events, courses, etc.
      - **Pro Tier ($30/month):**
        - Advanced AI features, premium content access, and enhanced content summarization.
-       - Access to premium news, company insights, job listings, events, and social media
+       - Access to premium news, organization insights, job listings, events, and social media
          integration.
      - **Expert Tier ($50/month):**
        - Full AI capabilities with the latest models, extensive AI agents for specialized queries,

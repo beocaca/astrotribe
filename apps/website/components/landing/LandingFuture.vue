@@ -24,8 +24,8 @@ const features = [
   },
   {
     icon: 'mdi:rocket-launch',
-    title: 'Company Updates',
-    description: 'Follow the latest news and updates from your favorite space companies.',
+    title: 'Organization Updates',
+    description: 'Follow the latest news and updates from your favorite space organizations.',
     color: 'from-red-500/20 to-orange-600/20',
     gradient: 'bg-gradient-to-br from-red-500 to-orange-600',
     comingSoon: 'Q1 2025',

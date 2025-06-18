@@ -7,7 +7,7 @@
      - **Features:**
        - Access to all news summarization
        - Basic AI questions and limited agents using free or low-cost LLMs
-       - Access to all root content such as news, research, companies, events, courses, etc.
+       - Access to all root content such as news, research, organizations, events, courses, etc.
      - **Expected Conversion Rate to Paid Tiers:**
        - 3% initial conversions, growth to 6% after 2 years of operations
      - **User Projections:**
@@ -19,7 +19,7 @@
        - Advanced AI questions with more sophisticated AI models
        - Access to more AI agents
        - Enhanced content summarization
-       - Access to all features in the free tier plus premium news, company insights, job listings,
+       - Access to all features in the free tier plus premium news, organization insights, job listings,
          events, and social media integration
      - **User Projections:**
        - Year 1: 300 users

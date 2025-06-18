@@ -1,9 +1,9 @@
 #### Overview of Services and Product Offerings
 
 - **News and Research Aggregation:** Daily updates from scientific journals, research papers, space
-  company blogs, news agencies, social media of major space agencies, research institutions, and
+  organization blogs, news agencies, social media of major space agencies, research institutions, and
   events.
-- **Company Profiles:** Detailed profiles of space-related companies including founding date,
+- **Organization Profiles:** Detailed profiles of space-related organizations including founding date,
   vision, team, funding, job opportunities, events, products, and more.
 - **Social Interaction:** Features for commenting, liking, sharing content, and creating user posts,
   with community-driven events like webinars, stargazing, and collaborative research projects.

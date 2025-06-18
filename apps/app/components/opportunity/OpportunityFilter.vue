@@ -35,11 +35,11 @@ const filters = computed({
   },
 })
 
-// For dropdown inputs (location, company, employment type)
+// For dropdown inputs (location, organization, employment type)
 const dropDownInputs = ref(
   [
     { key: 'location', icon: 'uil:location-point', label: 'Location' },
-    { key: 'company', icon: 'uil:building', label: 'Company' },
+    { key: 'organization', icon: 'uil:building', label: 'Organization' },
     { key: 'type', icon: 'uil:clock', label: 'Type' },
   ].reduce(
     (acc, { key, icon, label }) => ({
@@ -77,8 +77,8 @@ const sortOptions = ref([
     icon: 'mdi:clock-outline',
   },
   {
-    label: 'Company Name',
-    value: 'company',
+    label: 'Organization Name',
+    value: 'organization',
     isAscending: true,
     icon: 'mdi:sort-alphabetical-ascending',
   },
@@ -90,7 +90,7 @@ const viewMode = ref<'grid' | 'list'>('grid')
 // Active sort option
 const activeSortOption = ref(sortOptions.value[0]) as Ref<Option>
 
-// Create filter chips for location, company, and type
+// Create filter chips for location, organization, and type
 const filterChips = computed(() => {
   const chips = [] as {
     id: string
@@ -115,15 +115,15 @@ const filterChips = computed(() => {
     })
   }
 
-  // Add company chips
-  if (filters.value.company.options.length > 0) {
-    filters.value.company.options.forEach((option) => {
+  // Add organization chips
+  if (filters.value.organization.options.length > 0) {
+    filters.value.organization.options.forEach((option) => {
       chips.push({
-        id: `company-${option.key}`,
+        id: `organization-${option.key}`,
         label: option.value,
         value: option.key,
-        type: 'company',
-        active: filters.value.company.value?.key === option.key,
+        type: 'organization',
+        active: filters.value.organization.value?.key === option.key,
         icon: 'uil:building',
       })
     })
@@ -171,8 +171,8 @@ const selectDropdown = (key: string, value: string) => {
 const handleChipSelect = (chip: any) => {
   if (chip.type === 'location') {
     filters.value.location.value = chip.active ? null : { key: chip.value, value: chip.label }
-  } else if (chip.type === 'company') {
-    filters.value.company.value = chip.active ? null : { key: chip.value, value: chip.label }
+  } else if (chip.type === 'organization') {
+    filters.value.organization.value = chip.active ? null : { key: chip.value, value: chip.label }
   } else if (chip.type === 'type') {
     filters.value.type.value = chip.active ? null : { key: chip.value, value: chip.label }
   } else if (chip.type === 'tag') {
@@ -186,7 +186,7 @@ const handleChipSelect = (chip: any) => {
 const clearAllFilters = () => {
   filters.value = {
     location: { value: '', options: filters.value.location.options },
-    company: { value: '', options: filters.value.company.options },
+    organization: { value: '', options: filters.value.organization.options },
     type: { value: '', options: filters.value.type.options },
     tags: [],
   }
@@ -231,13 +231,13 @@ const locationInputValue = computed({
   },
 })
 
-const companyInputValue = computed({
+const organizationInputValue = computed({
   get() {
-    return filters.value.company.value?.value ?? ''
+    return filters.value.organization.value?.value ?? ''
   },
   set(newValue) {
     // Optional: you could also search options here and set selected option if needed
-    filters.value.company.value = { key: newValue, value: newValue }
+    filters.value.organization.value = { key: newValue, value: newValue }
   },
 })
 
@@ -354,11 +354,11 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <!-- Company filter -->
+        <!-- Organization filter -->
         <div class="relative flex-grow">
-          <label class="block text-xs font-medium mb-1 text-gray-400">Company</label>
+          <label class="block text-xs font-medium mb-1 text-gray-400">Organization</label>
           <div
-            :ref="(ref) => (dropDownInputs.company.input = ref)"
+            :ref="(ref) => (dropDownInputs.organization.input = ref)"
             class="relative border border-primary-800/30 rounded-lg"
           >
             <Icon
@@ -366,35 +366,35 @@ onUnmounted(() => {
               class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5"
             />
             <input
-              v-model="companyInputValue"
+              v-model="organizationInputValue"
               type="text"
               class="pl-10 w-full py-2 bg-primary-900/50 text-white rounded-lg border-none focus:ring-primary-500 transition-all hover:bg-primary-800/50"
-              placeholder="Search company..."
-              @focus="dropDownInputs.company.showSuggestions = true"
+              placeholder="Search organization..."
+              @focus="dropDownInputs.organization.showSuggestions = true"
             />
           </div>
           <!-- Dropdown suggestions -->
           <div
-            v-if="dropDownInputs.company.showSuggestions"
-            :ref="(ref) => (dropDownInputs.company.ref = ref)"
+            v-if="dropDownInputs.organization.showSuggestions"
+            :ref="(ref) => (dropDownInputs.organization.ref = ref)"
             class="absolute z-10 mt-1 w-full bg-primary-900/90 rounded-lg shadow-lg border border-primary-800/30 py-1 max-h-[200px] overflow-y-auto backdrop-blur-md"
           >
             <button
-              :key="'company_all'"
+              :key="'organization_all'"
               class="w-full text-left px-4 py-2 hover:bg-primary-800/50 text-gray-300 text-sm transition-colors"
-              @click="selectDropdown('company', '')"
+              @click="selectDropdown('organization', '')"
             >
               <Icon
                 name="uil:building"
                 class="inline-block mr-2 w-4 h-4 text-gray-400"
               />
-              All Companies
+              All Organizations
             </button>
             <button
-              v-for="option in filters.company.options"
+              v-for="option in filters.organization.options"
               :key="option.key"
               class="w-full text-left px-4 py-2 hover:bg-primary-800/50 text-gray-300 text-sm transition-colors"
-              @click="selectDropdown('company', option)"
+              @click="selectDropdown('organization', option)"
             >
               <Icon
                 name="uil:building"

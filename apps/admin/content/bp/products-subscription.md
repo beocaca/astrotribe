@@ -5,7 +5,7 @@
    - **Free Tier:**
      - Basic news summarization, basic AI questions, limited agents, access to root content.
    - **Pro Tier ($30/month):**
-     - Advanced AI questions, enhanced content summarization, premium news, company insights, job
+     - Advanced AI questions, enhanced content summarization, premium news, organization insights, job
        listings, events, and social media integration.
    - **Expert Tier ($50/month):**
      - Full AI capabilities, extensive AI agents, comprehensive content summarization, advanced

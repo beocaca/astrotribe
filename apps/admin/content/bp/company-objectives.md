@@ -1,9 +1,9 @@
-#### Company Objectives and Goals
+#### Organization Objectives and Goals
 
 1. **Short-term Goals:**
 
    - **Objectives (1-2 years):**
-     - Expansive dataset of research papers, news articles, courses, textbooks, jobs, and company
+     - Expansive dataset of research papers, news articles, courses, textbooks, jobs, and organization
        information.
      - User growth: 10k after 1 year, 50k after 2 years, with conversion rates improving from 3% to
        6%.

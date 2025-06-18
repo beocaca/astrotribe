@@ -15,7 +15,7 @@ and existing players in the industry. Key factors and challenges include:
 - **Private Sector Investment:**
 
   - Significant private equity (PE) and venture capital (VC) investments in the space sector.
-  - PE investments totaled about $272 billion into 1,791 unique companies since 2013.
+  - PE investments totaled about $272 billion into 1,791 unique organizations since 2013.
   - The FY23 U.S. national security space budget allocated $20.8 billion, a 19.5% increase from
     FY22.
   - Over 5,000 broadband satellites expected in Low Earth Orbit (LEO) by the end of 2023.
@@ -46,7 +46,7 @@ and existing players in the industry. Key factors and challenges include:
 #### Industry and Market Growth:
 
 - **Public-Private Collaboration:** Crucial for scaling opportunities and leveraging investments.
-- **Emerging Trends:** Expansion of private companies’ roles, space data services, and in-space
+- **Emerging Trends:** Expansion of private organizations’ roles, space data services, and in-space
   manufacturing.
 - **Future Business Models:** Shift towards higher volume, lower cost, and standardized offerings.
 
@@ -60,7 +60,7 @@ and existing players in the industry. Key factors and challenges include:
 - **Potential for 40,000-50,000 satellites serving over 10 million end-users by 2030.**
 - **Data from space expected to grow to over 500 exabytes from 2020 to 2030.**
 - **98% of senior executives believe in increased demand for space data and the expansion of private
-  companies' roles.**
+  organizations' roles.**
 
 ---
 
@@ -188,7 +188,7 @@ For more details, visit the article
 
 ### References
 
-- **World Economic Forum in partnership with McKinsey & Company**
+- **World Economic Forum in partnership with McKinsey & Organization**
 
 For more detailed information, you can view the full report on the
 [World Economic Forum's website](https://www3.weforum.org/docs/WEF_Space_2024.pdf).
@@ -208,7 +208,7 @@ For more detailed information, you can view the full report on the
 
 The space sector in India has been growing steadily over the past few years, driven by significant
 advancements and initiatives by the Indian Space Research Organisation (ISRO) and the increasing
-involvement of private companies. Here is an overview of the key aspects of the Indian space sector:
+involvement of private organizations. Here is an overview of the key aspects of the Indian space sector:
 
 ### Growth Over the Last Few Years
 
@@ -224,7 +224,7 @@ involvement of private companies. Here is an overview of the key aspects of the 
 
 2. **Private Sector Involvement:**
 
-   - Companies like OneWeb and SpaceX have shown interest in launching satellites using ISRO's
+   - Organizations like OneWeb and SpaceX have shown interest in launching satellites using ISRO's
      launch vehicles.
    - Indian startups like Skyroot Aerospace and Agnikul Cosmos are emerging, focusing on developing
      private launch capabilities and small satellite technology.
@@ -238,7 +238,7 @@ involvement of private companies. Here is an overview of the key aspects of the 
 4. **Policy and Infrastructure:**
    - The Indian government has been working on policies to boost private sector participation. The
      creation of IN-SPACe (Indian National Space Promotion and Authorization Center) aims to provide
-     a level playing field for private companies.
+     a level playing field for private organizations.
    - Investment in space infrastructure, including new launch sites and the development of the Human
      Spaceflight program (Gaganyaan), is ongoing.
 
@@ -262,7 +262,7 @@ involvement of private companies. Here is an overview of the key aspects of the 
 
 3. **Private Sector Expansion:**
 
-   - Increased involvement of private companies in manufacturing, launching, and providing
+   - Increased involvement of private organizations in manufacturing, launching, and providing
      space-based services.
    - Growth of startups and innovation hubs focused on space technology.
 
@@ -296,7 +296,7 @@ involvement of private companies. Here is an overview of the key aspects of the 
 2. **Regulatory Framework:**
 
    - Streamlining regulatory processes to facilitate easier entry and operation for private
-     companies.
+     organizations.
 
 3. **Technological Advancements:**
    - Keeping pace with global advancements in space technology and innovation.
@@ -431,8 +431,8 @@ space economy, with ambitions to increase this share to over 10% by 2030.
   revenue.
 - **ISRO Agreements:** Six agreements with four countries (2021-2023) for launching foreign
   satellites, with a revenue potential of $141 million.
-- **Private Sector Growth:** Over 400 private space companies, making India the fifth globally in
-  the number of space companies.
+- **Private Sector Growth:** Over 400 private space organizations, making India the fifth globally in
+  the number of space organizations.
 - **Start-Up Growth:** From 1 start-up in 2012 to 189 in 2023, with funding growing to $124.7
   million in 2023.
 
@@ -684,9 +684,9 @@ For detailed data and further information, you can visit the
 #### Key Factors Driving Growth:
 
 - **Cost Reduction**: Launch costs lowered by 95%.
-- **Private Investment**: Around $14.5 billion invested in space infrastructure companies in the
+- **Private Investment**: Around $14.5 billion invested in space infrastructure organizations in the
   previous year, with expectations of increased investment.
-- **Public-Private Partnerships**: Collaboration between public agencies and private companies is
+- **Public-Private Partnerships**: Collaboration between public agencies and private organizations is
   growing.
 
 #### Employment Impact:
@@ -712,7 +712,7 @@ For detailed data and further information, you can visit the
 
 #### Emerging Trends:
 
-- **Space Tourism**: Private companies are advancing space tourism.
+- **Space Tourism**: Private organizations are advancing space tourism.
 - **Technological Innovations**: Includes uninterrupted Internet, small satellites, space resource
   utilization, in-space manufacturing, asteroid mining, and interplanetary transportation systems.
 

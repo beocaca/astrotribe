@@ -8,7 +8,7 @@ export const useSocialLinks = () => {
         from: 'blue',
         to: 'sky',
       },
-      url: 'https://www.linkedin.com/company/astronera',
+      url: 'https://www.linkedin.com/organization/astronera',
       username: 'uk',
     },
     {

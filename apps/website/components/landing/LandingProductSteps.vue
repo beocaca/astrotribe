@@ -22,8 +22,8 @@ const steps = [
     icon: 'mdi:telescope',
     title: 'Industry Insights',
     description:
-      'Track the latest developments from leading space tech companies and emerging startups.',
-    img: '/images/features/companies.jpeg',
+      'Track the latest developments from leading space tech organizations and emerging startups.',
+    img: '/images/features/organizations.jpeg',
     color: 'from-purple-500/20 to-blue-500/20',
   },
   {
@@ -35,7 +35,6 @@ const steps = [
     color: 'from-indigo-500/20 to-sky-500/20',
   },
 ]
-
 </script>
 
 <template>

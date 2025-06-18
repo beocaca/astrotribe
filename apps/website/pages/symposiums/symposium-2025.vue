@@ -103,8 +103,8 @@ onBeforeUnmount(() => {
                 platform dedicated to tackling the critical issue of light pollution. Excessive
                 artificial lighting disrupts ecosystems, harms human health, wastes energy, and
                 diminishes cultural and astronomical heritage. This event aims to bring together
-                policymakers, lighting companies, and global experts to inspire actionable solutions
-                for India, starting with Maharashtra.
+                policymakers, lighting organizations, and global experts to inspire actionable
+                solutions for India, starting with Maharashtra.
               </p>
             </div>
 
@@ -181,9 +181,9 @@ onBeforeUnmount(() => {
             >
               <h2 class="text-2xl font-bold text-primary-400 mb-4">Be the Changemaker</h2>
               <p class="mb-4">
-                This symposium offers a unique opportunity for policymakers and lighting companies
-                to take a leadership role in combating light pollution. Together, let's create a
-                sustainable future by preserving our nightscapes.
+                This symposium offers a unique opportunity for policymakers and lighting
+                organizations to take a leadership role in combating light pollution. Together,
+                let's create a sustainable future by preserving our nightscapes.
               </p>
               <div class="rounded-lg overflow-hidden mt-4">
                 <IBImage

@@ -19,7 +19,7 @@
    - Launch updates
    - Conferences
    - Events
-   - Companies
+   - Organizations
    - Funding opportunities
    - Job opportunities
    - Astronomy facts and history

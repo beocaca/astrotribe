@@ -12,7 +12,7 @@ export const useContactForm = () => {
     name: string
     message: string
     phone?: string
-    company?: string
+    organization?: string
     inquiryType?: string
     preferredDate?: Date
   }

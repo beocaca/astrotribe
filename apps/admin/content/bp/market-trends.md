@@ -22,7 +22,7 @@
    - **Astronomy Sector:**
 
      - Increasing public interest in space exploration driven by missions from agencies like NASA
-       and private companies like SpaceX.
+       and private organizations like SpaceX.
      - Growth in online astronomy communities and educational content.
      - Advancements in AI and machine learning for data analysis in astronomy.
      - We need specific growth numbers here.

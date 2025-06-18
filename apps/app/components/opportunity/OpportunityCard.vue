@@ -40,7 +40,7 @@ const formattedSalary = computed(() => {
 })
 
 // Extract base domain from opportunity URL
-const companyDomain = computed(() => {
+const organizationDomain = computed(() => {
   if (!props.opportunity.url) return ''
   try {
     const url = new URL(props.opportunity.url)
@@ -95,7 +95,11 @@ const isAboutToExpire = computed(() => {
     <!-- Enhanced gradient background for featured opportunitys -->
     <div
       class="absolute inset-0 bg-gradient-to-br pointer-events-none opacity-30"
-      :class="opportunity.is_featured ? 'from-primary-900 to-primary-700' : 'from-transparent to-primary-950'"
+      :class="
+        opportunity.is_featured
+          ? 'from-primary-900 to-primary-700'
+          : 'from-transparent to-primary-950'
+      "
     ></div>
 
     <!-- Main content wrapper -->
@@ -157,7 +161,7 @@ const isAboutToExpire = computed(() => {
             </span>
 
             <!-- <div class="flex items-center gap-1">
-              <span class="text-sm font-medium text-gray-300">{{ opportunity.company }}</span>
+              <span class="text-sm font-medium text-gray-300">{{ opportunity.organization }}</span>
               <Icon
                 v-if="opportunity.verified"
                 name="material-symbols:verified"
@@ -220,12 +224,12 @@ const isAboutToExpire = computed(() => {
         />
       </NuxtLink>
 
-      <!-- Company domain display -->
+      <!-- Organization domain display -->
       <div
-        v-if="companyDomain"
+        v-if="organizationDomain"
         class="mt-2 text-center text-xs text-gray-500"
       >
-        {{ companyDomain }}
+        {{ organizationDomain }}
       </div>
     </div>
   </div>

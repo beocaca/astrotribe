@@ -11,14 +11,6 @@ const features = [
     icon: 'mdi:earth',
     metrics: ['Live updates', 'Global coverage'],
   },
-
-  {
-    id: useId(),
-    title: 'Custom Categories',
-    subtitle: 'Follow what interests you',
-    icon: 'mdi:tune-vertical',
-    metrics: ['Personalized feed', 'Topic filters'],
-  },
 ]
 
 onMounted(() => {

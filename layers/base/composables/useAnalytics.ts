@@ -38,8 +38,8 @@ export enum JobMarketMetric {
   JobListing = 'job_listing',
   JobView = 'job_view',
   JobApplication = 'job_application',
-  CompanyProfileCreation = 'company_profile_creation',
-  CompanyFollow = 'company_follow',
+  OrganizationProfileCreation = 'organization_profile_creation',
+  OrganizationFollow = 'organization_follow',
 }
 
 export enum TechnicalPerformanceMetric {
@@ -49,7 +49,7 @@ export enum TechnicalPerformanceMetric {
   Uptime = 'uptime',
 }
 
-export type ContentType = 'blog_post' | 'news_article' | 'company_profile' | 'job_listing'
+export type ContentType = 'blog_post' | 'news_article' | 'organization_profile' | 'job_listing'
 
 export type ErrorType = 'javascript_error' | 'api_error' | '404_error'
 

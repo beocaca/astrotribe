@@ -4,7 +4,7 @@ import { type FeatureKey, FEATURES, PlanType } from '#shared/constants'
 import { useContentCounts } from '~/composables/useContentCounts'
 import { useViewModeStore } from '~/stores/useViewModeStore'
 
-type ContentType = 'news' | 'opportunities' | 'companies'
+type ContentType = 'news' | 'opportunities' | 'organizations'
 
 interface FeatureLimitOptions<T> {
   feature: FeatureKey

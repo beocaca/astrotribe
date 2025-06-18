@@ -4,7 +4,7 @@ import { gsap } from 'gsap'
 // Stats to showcase platform reach
 const stats = [
   { id: useId(), value: 50, suffix: '+', label: 'News Sources' },
-  { id: useId(), value: 50, suffix: '+', label: 'Space Agencies & Companies' },
+  { id: useId(), value: 50, suffix: '+', label: 'Space Agencies & Organizations' },
   { id: useId(), value: 24, suffix: '/7', label: 'Coverage' },
 ]
 

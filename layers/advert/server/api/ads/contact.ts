@@ -3,7 +3,7 @@ import { z } from 'zod'
 import { Resend } from 'resend'
 
 const inquirySchema = z.object({
-  companyName: z.string().min(1),
+  organizationName: z.string().min(1),
   website: z.string().url().optional().nullable(),
   contactName: z.string().min(1),
   email: z.string().email(),
@@ -33,12 +33,12 @@ export default defineEventHandler(async (event) => {
     await resend.emails.send({
       from: 'AstronEra Advertising <notifications@astronera.org>',
       to: 'admin@astronera.org',
-      subject: `New Advertising Inquiry: ${data.companyName}`,
+      subject: `New Advertising Inquiry: ${data.organizationName}`,
       html: `
         <h2>New Advertising Inquiry</h2>
         
-        <h3>Company Information</h3>
-        <p><strong>Company:</strong> ${data.companyName}</p>
+        <h3>Organization Information</h3>
+        <p><strong>Organization:</strong> ${data.organizationName}</p>
         <p><strong>Website:</strong> ${data.website || 'Not provided'}</p>
         
         <h3>Contact Information</h3>

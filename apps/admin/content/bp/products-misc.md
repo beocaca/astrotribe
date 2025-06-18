@@ -6,7 +6,7 @@
 
 #### History
 
-- History of space agency by companies http://www.astronautix.com/index.html
+- History of space agency by organizations http://www.astronautix.com/index.html
 
 #### Astronomy Calendar
 

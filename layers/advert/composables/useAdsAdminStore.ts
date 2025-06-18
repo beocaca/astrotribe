@@ -6,7 +6,7 @@ export interface AdMetrics {
   id: string
   package_name: string
   ad_position: string
-  company_name: string
+  organization_name: string
   logo_url: string
   title: string
   total_views: number

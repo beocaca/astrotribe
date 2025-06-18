@@ -250,7 +250,7 @@ const clearFilters = () => {
           >
             <template #body="{ data }">
               <div class="font-medium">{{ data.title }}</div>
-              <div class="text-sm text-slate-400">{{ data.company }}</div>
+              <div class="text-sm text-slate-400">{{ data.organization }}</div>
             </template>
           </PrimeColumn>
 

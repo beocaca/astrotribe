@@ -55,7 +55,7 @@ space exploration and the betterment of life on Earth.
 #### Space Agriculture
 
 One of the most intriguing aspects of the cis-lunar economy is the prospect of growing plants in
-space. Companies like SpaceX, Blue Origin, and NASA have been actively involved in research and
+space. Organizations like SpaceX, Blue Origin, and NASA have been actively involved in research and
 experiments aimed at cultivating crops beyond Earth's atmosphere. The potential benefits of space
 agriculture are manifold. Not only does it provide a sustainable source of fresh food for astronauts
 during long-duration missions, but it also offers insights into how plants respond to the unique
@@ -72,7 +72,7 @@ climate change and diminishing arable land.
 #### Asteroid Mining
 
 In parallel with space farming, the exploration and utilization of asteroid resources represent
-another cornerstone of the cis-lunar economy. Companies like Planetary Resources (now Redwire
+another cornerstone of the cis-lunar economy. Organizations like Planetary Resources (now Redwire
 Space), Deep Space Industries, and Asteroid Mining Corporation are at the forefront of this nascent
 industry, pioneering technologies to extract valuable minerals and metals from near-Earth asteroids.
 These celestial bodies are rich in precious metals like platinum, rare earth elements, and water,

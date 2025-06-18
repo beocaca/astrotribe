@@ -4,7 +4,7 @@ export type DomainKey =
   | 'events'
   | 'venues'
   | 'research'
-  | 'companies'
+  | 'organizations'
   | 'chats'
   | 'feedbacks'
   | 'currentUser'

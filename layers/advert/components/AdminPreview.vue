@@ -16,7 +16,7 @@ const fetchAds = async () => {
       .select(
         `
         *,
-        company:company_id (*),
+        organization:organization_id (*),
         package:package_id (*),
         variants:ad_variants (
           *,
@@ -113,8 +113,8 @@ onMounted(() => {
           <div class="mb-6">
             <div class="grid grid-cols-4 gap-4 p-4 bg-slate-800/50 rounded-lg">
               <div>
-                <p class="text-sm text-slate-400">Company</p>
-                <p class="font-medium text-white">{{ currentAd.company.name }}</p>
+                <p class="text-sm text-slate-400">Organization</p>
+                <p class="font-medium text-white">{{ currentAd.organization.name }}</p>
               </div>
               <div>
                 <p class="text-sm text-slate-400">Package</p>

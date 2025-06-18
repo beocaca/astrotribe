@@ -24,7 +24,7 @@ const newsItems = ref([
       'The latest test of the fully integrated Starship and Super Heavy booster achieved multiple mission objectives including controlled descent.',
     source: 'SpaceX',
     date: '1 day ago',
-    category: 'Companies',
+    category: 'Organizations',
     image: '/images/hero-image.jpg',
   },
   {
@@ -51,7 +51,7 @@ const categories = ref([
   { id: 'research', name: 'Research', icon: 'mdi:microscope' },
   { id: 'missions', name: 'Missions', icon: 'mdi:rocket-launch' },
   { id: 'discoveries', name: 'Discoveries', icon: 'mdi:star' },
-  { id: 'companies', name: 'Companies', icon: 'mdi:domain' },
+  { id: 'organizations', name: 'Organizations', icon: 'mdi:domain' },
 ])
 
 const activeCategory = ref('all')

@@ -16,7 +16,7 @@
      - User-proposed projects, potentially funded by the community or private investors.
      - Onsite stargazing events.
      - Live webinars with experts.
-     - Conferences and fostering company collaboration.
+     - Conferences and fostering organization collaboration.
      - Astrotourism and institutional visits to dark sky reserves and observatories.
 
 ### Social Interaction with Content

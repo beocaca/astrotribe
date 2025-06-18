@@ -30,7 +30,7 @@ export function useOnboardingValidation() {
       case 1: // User Type
         return ['user_type']
       case 2: // Professional Details
-        return ['company_name', 'position', 'industry', 'linkedin_url']
+        return ['organization_name', 'position', 'industry', 'linkedin_url']
       case 3: // Interests
         return ['interests']
       case 4: // Feature Interests
@@ -68,7 +68,7 @@ export function useOnboardingValidation() {
 
   // Professional Details Step Validation
   const professionalDetailsSchema = z.object({
-    companyName: z.string().optional(),
+    organizationName: z.string().optional(),
     position: z.string().optional(),
     industry: z.string().optional(),
     linkedinUrl: z.string().url('Please enter a valid LinkedIn URL').optional().or(z.literal('')),

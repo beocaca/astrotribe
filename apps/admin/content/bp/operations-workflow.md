@@ -4,7 +4,7 @@
 
    - **Content Writing:** Content will go through an automation process where an AI agent takes the
      content title, performs research on target keywords, aggregates top search results, formulates
-     a draft post using SEO best practices and company-specific instructions, generates a featured
+     a draft post using SEO best practices and organization-specific instructions, generates a featured
      image, and publishes it as a draft for review and finishing touches by our content team.
    - **Social Media Management:** Initially managed through platform-specific UI, with the potential
      to adopt third-party software or develop an in-house solution in the future.

@@ -27,7 +27,7 @@ const partners = [
     name: 'Havells India Ltd',
     location: 'Noida, Uttar Pradesh, India',
     description:
-      "One of India's largest lighting and electrical equipment companies. Havells joined the DarkSky Approved program in 2022, producing outdoor luminaires meeting DarkSky's strict criteria.",
+      "One of India's largest lighting and electrical equipment organizations. Havells joined the DarkSky Approved program in 2022, producing outdoor luminaires meeting DarkSky's strict criteria.",
     products: ['DarkSky-approved outdoor luminaires'],
     website: 'havells.com',
     isIndian: true,
@@ -37,7 +37,7 @@ const partners = [
     name: 'Signify (Philips Lighting)',
     location: 'Gurgaon, India (India HQ); Eindhoven, Netherlands (Global HQ)',
     description:
-      "The world's largest lighting company with manufacturing facilities and market presence in India as Signify Innovations India Ltd. Their Philips Luma Gen2 LED streetlight range is DarkSky Approved.",
+      "The world's largest lighting organization with manufacturing facilities and market presence in India as Signify Innovations India Ltd. Their Philips Luma Gen2 LED streetlight range is DarkSky Approved.",
     products: ['Philips Luma Gen2 LED streetlights'],
     website: 'signify.com/en-in',
     isIndian: false,
@@ -83,8 +83,8 @@ const { conf } = useAnimation()
         DarkSky Certified <span class="text-highlight">Partners in India</span>
       </h2>
       <p class="text-primary-200 text-lg max-w-3xl mx-auto">
-        These companies offer DarkSky-certified lighting solutions that reduce light pollution and
-        preserve our night skies while operating in India.
+        These organizations offer DarkSky-certified lighting solutions that reduce light pollution
+        and preserve our night skies while operating in India.
       </p>
     </div>
 

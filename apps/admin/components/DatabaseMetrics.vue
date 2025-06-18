@@ -21,8 +21,8 @@ interface GrowthData {
 const supabase = useSupabaseClient()
 
 const tables: TableOption[] = [
-  { name: 'Companies', value: 'companies' },
-  { name: 'Company URLs', value: 'company_urls' },
+  { name: 'Organizations', value: 'organizations' },
+  { name: 'Organization URLs', value: 'organization_urls' },
   { name: 'News', value: 'news' },
   { name: 'Users', value: 'user_profiles' },
 ]
@@ -35,7 +35,7 @@ const timePeriods: TimePeriod[] = [
   { name: 'Year', value: '1 year' },
 ]
 
-const selectedTable = ref<string>('companies')
+const selectedTable = ref<string>('organizations')
 const selectedTimePeriod = ref<string>('1 day')
 const numPeriods = ref<number>(6)
 const growthData = ref<GrowthData[]>([])
@@ -51,7 +51,7 @@ const dummyCalculateTableGrowth = (
     setTimeout(() => {
       const baseCount =
         {
-          companies: 1000,
+          organizations: 1000,
           users: 10000,
           products: 5000,
         }[tableName] || 1000

@@ -35,8 +35,8 @@ export interface AdPackage {
 export interface Ad {
   id: string
   package_id: string
-  company_id: string
-  company: {
+  organization_id: string
+  organization: {
     name: string
     logo_url: string
   }

@@ -5,7 +5,7 @@ const contentTypes = [
   { label: 'Research', value: 'research' },
   { label: 'Events', value: 'events' },
   { label: 'Opportunities', value: 'opportunities' },
-  { label: 'Companies', value: 'companies' },
+  { label: 'Organizations', value: 'organizations' },
   { label: 'Contact', value: 'contact' },
   { label: 'People', value: 'people' },
   { label: 'Newsletter', value: 'newsletter' },

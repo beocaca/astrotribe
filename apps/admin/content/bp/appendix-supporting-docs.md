@@ -1,16 +1,16 @@
 #### Supporting Documents and Data
 
-1. **Company Overview and Mission Statement:**
+1. **Organization Overview and Mission Statement:**
 
    - A document detailing AstronEra’s mission, vision, and core values.
-   - Background information about the company, its founders, and the inspiration behind its
+   - Background information about the organization, its founders, and the inspiration behind its
      creation.
 
 2. **Product Descriptions:**
 
    - Detailed descriptions of the Online Astronomy Hub features, including:
      - News Aggregation
-     - Company Profiles
+     - Organization Profiles
      - Social Interaction
      - AI-driven Summarization
      - Jobs Portal

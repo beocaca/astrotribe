@@ -6,7 +6,7 @@ import { z } from 'zod'
 // Define the form validation schema
 const formSchema = z.object({
   name: z.string().min(2, 'Name is required'),
-  company: z.string().min(2, 'Organization name is required'),
+  organization: z.string().min(2, 'Organization name is required'),
   email: z.string().email('Please enter a valid email address'),
   phone: z.string().optional(),
   website: z.string().optional(),
@@ -21,7 +21,7 @@ const formResolver = zodResolver(formSchema)
 // Initial form values
 const initialValues = reactive({
   name: '',
-  company: '',
+  organization: '',
   email: '',
   phone: '',
   website: '',
@@ -47,7 +47,7 @@ const {
 
 // Customer types
 const customerTypes = [
-  { name: 'Space-Tech Company', value: 'space-tech' },
+  { name: 'Space-Tech Organization', value: 'space-tech' },
   { name: 'Institution', value: 'institution' },
   { name: 'Event Organizer', value: 'events' },
   { name: 'Researcher', value: 'researcher' },
@@ -133,15 +133,15 @@ const submitForm = async (result) => {
           </IBFormField>
 
           <IBFormField
-            id="company"
-            name="company"
+            id="organization"
+            name="organization"
             label="Organization Name"
             required
-            :initial-value="initialValues.company"
+            :initial-value="initialValues.organization"
           >
             <template #default="{ field }">
               <PrimeInputText
-                id="company"
+                id="organization"
                 v-model="field.value"
                 class="w-full"
                 placeholder="Your organization"
@@ -162,7 +162,7 @@ const submitForm = async (result) => {
                 v-model="field.value"
                 type="email"
                 class="w-full"
-                placeholder="your.email@company.com"
+                placeholder="your.email@organization.com"
               />
             </template>
           </IBFormField>

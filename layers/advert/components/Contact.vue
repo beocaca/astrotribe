@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const form = reactive({
-  // Company Information
-  companyName: '',
+  // Organization Information
+  organizationName: '',
   website: '',
 
   // Contact Information
@@ -81,18 +81,18 @@ const handleSubmit = async () => {
           {{ error }}
         </div>
 
-        <!-- Company Information -->
+        <!-- Organization Information -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label class="block text-sm text-gray-400 mb-2">Company Name *</label>
+            <label class="block text-sm text-gray-400 mb-2">Organization Name *</label>
             <PrimeInputText
-              v-model="form.companyName"
+              v-model="form.organizationName"
               class="w-full bg-[#030711]"
               required
             />
           </div>
           <div>
-            <label class="block text-sm text-gray-400 mb-2">Company Website</label>
+            <label class="block text-sm text-gray-400 mb-2">Organization Website</label>
             <PrimeInputText
               v-model="form.website"
               class="w-full bg-[#030711]"

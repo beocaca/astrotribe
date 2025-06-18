@@ -9,7 +9,7 @@ const formData = ref({
   name: '',
   email: '',
   phone: '',
-  company: '',
+  organization: '',
   message: '',
 })
 
@@ -46,7 +46,7 @@ const submitForm = () => {
       email: formData.value.email,
       message: formData.value.message,
       phone: formData.value.phone,
-      company: formData.value.company,
+      organization: formData.value.organization,
       name: formData.value.name,
     })
 
@@ -62,7 +62,7 @@ const submitForm = () => {
       email: '',
       message: '',
       phone: '',
-      company: '',
+      organization: '',
     }
   }, 1500)
 }
@@ -73,7 +73,7 @@ useHead({
     {
       name: 'description',
       content:
-        'Promote your space-tech company, institutions, event, or research to our engaged community of astronomy enthusiasts across India and beyond.',
+        'Promote your space-tech organization, institutions, event, or research to our engaged community of astronomy enthusiasts across India and beyond.',
     },
   ],
 })
@@ -149,13 +149,13 @@ useHead({
             </div>
             <div class="space-y-2">
               <label
-                for="company"
+                for="organization"
                 class="block text-sm font-medium"
-                >Company</label
+                >Organization</label
               >
               <PrimeInputText
-                id="company"
-                v-model="formData.company"
+                id="organization"
+                v-model="formData.organization"
                 class="w-full"
               />
             </div>

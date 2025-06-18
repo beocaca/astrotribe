@@ -35,16 +35,16 @@ const agents: ChatAgent[] = [
     id: 2,
     name: 'Space Tech Analyst',
     features: [
-      'Research astronomy and space tech companies',
+      'Research astronomy and space tech organizations',
       'Provide insights for job seekers and competitors',
-      'Analyze company profiles and trends',
+      'Analyze organization profiles and trends',
     ],
     systemMessage:
-      'You are an astronomy and space tech company researcher. Your database contains information on numerous companies in the field. Your role is to answer questions about these companies, help users find potential employers, and perform competitor analysis. Provide detailed, factual information and insightful comparisons when asked.',
+      'You are an astronomy and space tech organization researcher. Your database contains information on numerous organizations in the field. Your role is to answer questions about these organizations, help users find potential employers, and perform competitor analysis. Provide detailed, factual information and insightful comparisons when asked.',
     enabled: true,
     starterPrompts: [
-      'What are the top 3 companies currently leading in commercial space flight, and how do they compare?',
-      "I'm an aerospace engineer looking for job opportunities. Which companies should I be watching?",
+      'What are the top 3 organizations currently leading in commercial space flight, and how do they compare?',
+      "I'm an aerospace engineer looking for job opportunities. Which organizations should I be watching?",
       'Can you provide a brief analysis of the current trends in the satellite industry?',
     ],
   },

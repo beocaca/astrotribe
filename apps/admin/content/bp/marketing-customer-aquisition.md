@@ -7,7 +7,7 @@
 - **Astronomy Businesses:** Use our database and scraped contacts / social profiles for founders to
   reach out directly.
 - **Enthusiasts:** Social media marketing, AstronEra existing email list. Organization
-  collaborations, partnerships with companies we have onboarded.
+  collaborations, partnerships with organizations we have onboarded.
 
 2. **Acquisition Channels:**
 
@@ -17,7 +17,7 @@
    - Influencer marketing
    - Organic traffic via blog
    - Paid social media advertising
-   - Our company database
+   - Our organization database
    - Email marketing (list building, converting free users to paying users)
    - Direct contact via social or email using sourced user data from astronomy-related websites
 

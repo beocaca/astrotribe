@@ -6,7 +6,7 @@ const symposiums = [
                 Symposium, a platform dedicated to tackling the critical issue of light pollution.
                 Excessive artificial lighting disrupts ecosystems, harms human health, wastes
                 energy, and diminishes cultural and astronomical heritage. This event aims to bring
-                together policymakers, lighting companies, and global experts to inspire actionable
+                together policymakers, lighting organizations, and global experts to inspire actionable
                 solutions for India, starting with Maharashtra.`,
     date: '1st March 2025 | 11.00am -12.30 pm IST',
     image: {

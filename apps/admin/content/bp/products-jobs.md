@@ -12,7 +12,7 @@
      - Citizen science
    - **Sourcing and Updates:**
      - LinkedIn
-     - Company websites
+     - Organization websites
      - Future consideration for direct posting
 
 2. **Features:**
@@ -28,6 +28,6 @@
 ### Jobs Portal
 
 AstronEra’s dedicated jobs portal lists a variety of opportunities in science communication,
-engineering, startups, academia, and citizen science. Sourced from LinkedIn and company websites,
+engineering, startups, academia, and citizen science. Sourced from LinkedIn and organization websites,
 the portal allows users to search by location, type, and salary, ensuring they
 can find the most relevant job opportunities.

@@ -4,7 +4,7 @@ import { usePersona } from './usePersona'
 export interface Opportunity {
   id: number
   title: string
-  company: string
+  organization: string
   location: string
   type: string
   description: string
@@ -26,12 +26,12 @@ export function useOpportunities() {
     {
       id: 1,
       title: 'Astronomy Educator',
-      company: 'Science Center',
+      organization: 'Science Center',
       location: 'San Francisco, CA',
       type: 'Full-time',
       description: 'Develop and deliver engaging astronomy programs for diverse audiences.',
       requirements: [
-        'Bachelor\'s degree in Astronomy, Physics, or related field',
+        "Bachelor's degree in Astronomy, Physics, or related field",
         'Experience in science education or outreach',
         'Excellent communication skills',
       ],
@@ -46,12 +46,12 @@ export function useOpportunities() {
     {
       id: 2,
       title: 'Space Systems Engineer',
-      company: 'AeroTech Industries',
+      organization: 'AeroTech Industries',
       location: 'Houston, TX',
       type: 'Full-time',
       description: 'Design and develop components for next-generation spacecraft systems.',
       requirements: [
-        'Master\'s degree in Aerospace Engineering or related field',
+        "Master's degree in Aerospace Engineering or related field",
         'Experience with spacecraft systems design',
         'Proficiency in CAD software and simulation tools',
       ],
@@ -66,7 +66,7 @@ export function useOpportunities() {
     {
       id: 3,
       title: 'Astrophysics Researcher',
-      company: 'National Observatory',
+      organization: 'National Observatory',
       location: 'Tucson, AZ',
       type: 'Full-time',
       description: 'Conduct cutting-edge research in astrophysics and analyze observational data.',
@@ -88,7 +88,7 @@ export function useOpportunities() {
   // Filter opportunities and sort by date
   const opportunities = computed(() => {
     return [...allOpportunities.value].sort(
-      (a, b) => b.postedDate.getTime() - a.postedDate.getTime()
+      (a, b) => b.postedDate.getTime() - a.postedDate.getTime(),
     )
   })
 
@@ -96,9 +96,11 @@ export function useOpportunities() {
   const personaOpportunity = computed(() => {
     if (!activePersona.value) return null
     const personaName = activePersona.value.name.toLowerCase()
-    return allOpportunities.value.find(
-      (opportunity) => opportunity.bestFor.toLowerCase() === personaName
-    ) || null
+    return (
+      allOpportunities.value.find(
+        (opportunity) => opportunity.bestFor.toLowerCase() === personaName,
+      ) || null
+    )
   })
 
   // Format date for display

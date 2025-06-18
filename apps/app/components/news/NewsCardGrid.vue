@@ -12,7 +12,6 @@ interface NewsCardProps {
     title: string
     url: string
     hot_score: number
-    vote_count?: number
     created_at: string
     updated_at: string
     published_at: string | null
@@ -34,23 +33,8 @@ interface NewsCardProps {
 
 const props = defineProps<NewsCardProps>()
 
-// Setup stores
-const voteStore = useVotesStore()
-
 // Local card state
 const isFlipped = ref(false)
-
-const displayScore = computed(() => voteStore.getScore(props.news.id) ?? props.news.vote_count ?? 0)
-const currentVote = computed(() => voteStore.getVoteType(props.news.id))
-
-// Handle voting
-const handleVote = async (voteType: number) => {
-  try {
-    await voteStore.submitVote(props.news.id, voteType, props.news.content_type)
-  } catch (error: any) {
-    console.error('Error submitting vote:', error)
-  }
-}
 
 // Extract category badges
 const categories = computed(() => props.news.details?.categories?.map((c) => c.name) || [])
@@ -199,23 +183,7 @@ const clippedSummary = computed(() => {
 
     <!-- Footer -->
     <!-- Actions (BOTTOM) -->
-    <div class="flex items-center justify-between pt-4 border-t border-primary-800/50 mt-4">
-      <!-- Vote buttons -->
-      <div class="flex items-center gap-3">
-        <button
-          :class="currentVote === 1 ? 'text-green-500' : ''"
-          class="w-5 h-5 flex items-center justify-center"
-          @click.stop="handleVote(1)"
-          >▲</button
-        >
-        <span>{{ displayScore }}</span>
-        <button
-          :class="currentVote === -1 ? 'text-red-500' : ''"
-          class="w-5 h-5 flex items-center justify-center"
-          @click.stop="handleVote(-1)"
-          >▼</button
-        >
-      </div>
+    <div class="flex items-center justify-between pt-4 border-t border-primary-800/50 mt-4"> </div>
   </div>
 </template>
 

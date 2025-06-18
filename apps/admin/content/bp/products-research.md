@@ -85,7 +85,6 @@
 - Additional sources, other than ARXIV.
 - Create AI agent that ranks papers based on a number of factors such as # of citations, author
   credability, published_in etc.
-- Allow users to upvote
 - Integrate translations API, allow users to translate N articles per month (store translations to
   benefit other users as time goes on)
   - Hire professional translators to review

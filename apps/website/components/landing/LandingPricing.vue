@@ -8,11 +8,6 @@ const features = [
     icon: 'mdi:newspaper-variant-outline',
   },
   {
-    text: 'Community-Driven Content',
-    description: 'Upvote and downvote articles to surface the best content',
-    icon: 'mdi:thumb-up-outline',
-  },
-  {
     text: 'Personalized Experience',
     description: 'Customize your feed by selecting specific space categories',
     icon: 'mdi:tune-vertical',

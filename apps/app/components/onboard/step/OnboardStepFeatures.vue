@@ -46,15 +46,14 @@ const fallbackFeatures: Feature[] = [
 // Define field and load features
 onMounted(async () => {
   try {
-    const response = await fetch('/api/feature/list', {
-      method: 'GET',
-      headers: { Accept: 'application/json' },
-    })
-
-    if (!response.ok) throw new Error(`Server error: ${response.statusText}`)
-
-    const data = await response.json()
-    features.value = Array.isArray(data) && data.length > 0 ? data : fallbackFeatures
+    // this endpoint has been removed
+    // const response = await fetch('/api/feature/list', {
+    //   method: 'GET',
+    //   headers: { Accept: 'application/json' },
+    // })
+    // if (!response.ok) throw new Error(`Server error: ${response.statusText}`)
+    // const data = await response.json()
+    // features.value = Array.isArray(data) && data.length > 0 ? data : fallbackFeatures
   } catch (err) {
     console.error('Error loading features:', err)
     error.value = (err as Error).message || 'Failed to load features'

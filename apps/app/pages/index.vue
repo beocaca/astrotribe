@@ -4,28 +4,7 @@ definePageMeta({
 })
 
 const userStore = useCurrentUser()
-const metricsStore = useUserMetricsStore()
 const { profile } = storeToRefs(userStore)
-const {
-  isLoading,
-  currentLevel,
-  levelProgress,
-  remainingDailyVotes,
-  dailyProgress,
-  currentStreak,
-  downvoteCount,
-  upvoteCount,
-  todayVoteCount,
-  totalVotes,
-  voteAccuracy,
-  achievementStats,
-  recentAchievements,
-} = storeToRefs(metricsStore)
-
-// Initialize metrics
-onMounted(() => {
-  metricsStore.init()
-})
 </script>
 
 <template>
@@ -52,7 +31,6 @@ onMounted(() => {
           <FeatureRanking />
         </div>
       </div>
-      <Feedback />
 
       <!-- Stats Grid -->
       <!-- <MetricStatCard

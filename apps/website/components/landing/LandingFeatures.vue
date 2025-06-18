@@ -11,13 +11,7 @@ const features = [
     icon: 'mdi:earth',
     metrics: ['Live updates', 'Global coverage'],
   },
-  {
-    id: useId(),
-    title: 'Community-Driven',
-    subtitle: 'Quality content rises to the top',
-    icon: 'mdi:thumb-up',
-    metrics: ['Upvote/Downvote', 'Trending news'],
-  },
+
   {
     id: useId(),
     title: 'Custom Categories',

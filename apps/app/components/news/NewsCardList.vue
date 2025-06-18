@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useTimeAgo } from '@vueuse/core'
-import { useVotesStore } from '@/stores/useVotesStore'
 import { extractPlainText } from '~/utils/extractPlainText'
 
 interface NewsCardProps {
@@ -11,7 +10,6 @@ interface NewsCardProps {
     title: string
     url: string
     hot_score: number
-    vote_count?: number
     created_at: string
     updated_at: string
     published_at: string | null
@@ -33,11 +31,6 @@ interface NewsCardProps {
 
 const props = defineProps<NewsCardProps>()
 
-const voteStore = useVotesStore()
-
-const displayScore = computed(() => voteStore.getScore(props.news.id) ?? props.news.vote_count ?? 0)
-const currentVote = computed(() => voteStore.getVoteType(props.news.id))
-
 const sourceName = computed(() => props.news.details?.source_name ?? 'Source')
 
 const readingTime = computed(() => {
@@ -53,10 +46,6 @@ const publishedTimeAgo = computed(() => {
   if (!props.news.published_at) return ''
   return useTimeAgo(new Date(props.news.published_at)).value
 })
-
-const handleVote = (voteType: number) => {
-  voteStore.submitVote(props.news.id, voteType, props.news.content_type)
-}
 
 const summaryText = computed(() => {
   const uncleanText =
@@ -105,31 +94,6 @@ const imageSource = computed(() => props.news.featured_image || fallbackImage)
 
     <!-- Actions -->
     <div class="flex flex-col gap-2 items-center justify-between flex-shrink-0">
-      <!-- Votes -->
-      <div class="flex flex-col items-center bg-primary-950/80 rounded-lg p-1">
-        <button
-          class="p-1 hover:text-green-500"
-          :class="{ 'text-green-500': currentVote === 1 }"
-          @click.stop="handleVote(1)"
-        >
-          <Icon
-            name="mdi:arrow-up-bold"
-            class="w-5 h-5"
-          />
-        </button>
-        <span class="text-sm font-medium">{{ displayScore }}</span>
-        <button
-          class="p-1 hover:text-red-500"
-          :class="{ 'text-red-500': currentVote === -1 }"
-          @click.stop="handleVote(-1)"
-        >
-          <Icon
-            name="mdi:arrow-down-bold"
-            class="w-5 h-5"
-          />
-        </button>
-      </div>
-
       <!-- Source Link -->
       <NuxtLink
         :to="news.url"

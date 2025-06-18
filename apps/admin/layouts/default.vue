@@ -78,18 +78,6 @@ const adminLinks = ref([
         slug: '/financials',
         icon: 'mdi:currency-usd',
       },
-      {
-        id: 12,
-        label: 'Referrals',
-        slug: '/referrals',
-        icon: 'mdi:account-multiple',
-      },
-      {
-        id: 13,
-        label: 'API Testing',
-        slug: '/api-tester',
-        icon: 'mdi:api',
-      },
       // {
       //   id: 12,
       //   label: 'Classifier',
@@ -121,12 +109,6 @@ const adminLinks = ref([
         label: 'Plans',
         slug: '/plans',
         icon: 'mdi:subscriptions',
-      },
-      {
-        id: 83,
-        label: 'Opportunities',
-        slug: '/opportunities',
-        icon: 'mdi:worker',
       },
     ],
   },

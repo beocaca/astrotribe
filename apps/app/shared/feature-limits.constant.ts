@@ -51,9 +51,9 @@ export const FEATURES = {
   COMPANIES: {
     key: 'COMPANIES',
     display: {
-      name: 'Companies',
+      name: 'Organizations',
       brandedName: 'GalaxyGraph™ Enterprise Map',
-      description: 'Space industry companies database',
+      description: 'Space industry organizations database',
       tagline: 'Access the Definitive Space Industry Database',
     },
     limit: {
@@ -62,7 +62,7 @@ export const FEATURES = {
     },
     benefits: [
       {
-        text: 'Full access to all company profiles and details',
+        text: 'Full access to all organization profiles and details',
         icon: 'mdi:office-building',
       },
       {

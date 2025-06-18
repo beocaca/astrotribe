@@ -122,13 +122,6 @@ const { profile } = storeToRefs(userStore)
             </div>
           </div>
 
-          <NuxtLink
-            to="/achievements"
-            class="flex items-center justify-center gap-2 px-4 py-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors"
-          >
-            <span>View All Achievements</span>
-            <Icon name="mdi:chevron-right" />
-          </NuxtLink>
         </div>
       </div>
       -->

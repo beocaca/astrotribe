@@ -46,7 +46,9 @@ const emit = defineEmits<{
   'payment-closed': []
 }>()
 
-const { razorpayKey } = useRuntimeConfig()
+const { razorpayKey } = useRuntimeConfig().public
+
+console.log('Razorpay Key Button:', razorpayKey)
 const loading = ref(false)
 const isRazorpayLoaded = ref(false)
 

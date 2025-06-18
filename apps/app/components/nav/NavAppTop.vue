@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const router = useRouter()
-const userStore = useCurrentUser()
 const toast = useNotification()
 const supabase = useSupabaseClient()
-const { profile, isAdmin } = storeToRefs(userStore)
 const { adminURL, loginPath, authURL } = useRuntimeConfig().public
+// const { profile, isAdmin } = storeToRefs(userStore)
+// const userStore = useCurrentUser()
 
 const profileMenu = ref(null)
 const toggleMenu = (e) => {
@@ -23,7 +23,8 @@ const items = computed(() => {
     },
   ]
 
-  if (isAdmin.value) {
+  if (false) {
+    // isAdmin.value
     menuItems.splice(2, 0, {
       label: 'Admin',
       command: () => navigateTo(adminURL, { external: true }),
@@ -61,46 +62,47 @@ const getFallbackAvatarUrl = (name: string) => {
   return `https://ui-avatars.com/api/?name=${initials}&background=random&size=128`
 }
 
-watch(
-  profile,
-  (newProfile) => {
-    if (newProfile?.avatar) {
-      avatarUrl.value = newProfile.avatar
-      fallbackLoaded.value = false
-    } else {
-      // Use name from profile for the fallback avatar, or default to 'User'
-      avatarUrl.value = getFallbackAvatarUrl(newProfile?.full_name || 'User')
-      fallbackLoaded.value = true
-    }
-  },
-  { immediate: true },
-)
+// watch(
+//   profile,
+//   (newProfile) => {
+//     if (newProfile?.avatar) {
+//       avatarUrl.value = newProfile.avatar
+//       fallbackLoaded.value = false
+//     } else {
+//       // Use name from profile for the fallback avatar, or default to 'User'
+//       avatarUrl.value = getFallbackAvatarUrl(newProfile?.full_name || 'User')
+//       fallbackLoaded.value = true
+//     }
+//   },
+//   { immediate: true },
+// )
 
-const handleImageError = () => {
-  if (!fallbackLoaded.value) {
-    // Only load fallback if we haven't already tried
-    avatarUrl.value = getFallbackAvatarUrl(profile.value?.full_name || 'User')
-    fallbackLoaded.value = true
-  }
-  console.log('Avatar image load error, using fallback')
-}
+// const handleImageError = () => {
+//   if (!fallbackLoaded.value) {
+//     // Only load fallback if we haven't already tried
+//     avatarUrl.value = getFallbackAvatarUrl(profile.value?.full_name || 'User')
+//     fallbackLoaded.value = true
+//   }
+//   console.log('Avatar image load error, using fallback')
+// }
 </script>
 
 <template>
   <div
-    class="foreground border-color sticky left-0 top-0 z-50 flex min-h-[60px] w-full flex-row items-center justify-between gap-4 border-b px-4 py-1"
+    class="sticky top-0 z-50 flex h-14 items-center justify-between foreground px-4 border-b border-color"
   >
     <!-- start -->
     <div class="flex items-center gap-4">
       <IBNavHamburger />
       <IBBreadcrumbs class="hidden text-sm lg:block" />
+      <!-- <RoleOverride /> -->
     </div>
     <!-- center -->
     <div class="flex w-full max-w-[70%] gap-4 px-4 py-2 lg:max-w-xl" />
     <!-- end -->
     <ClientOnly>
       <div
-        v-if="isLoading || !profile?.user_role"
+        v-if="isLoading"
         class="flex items-center justify-end gap-4"
       >
         <PrimeSkeleton class="min-h-4 min-w-10 rounded-md" />
@@ -110,35 +112,16 @@ const handleImageError = () => {
           }"
         />
       </div>
-      <div
-        v-else-if="profile?.user_role"
-        class="flex items-center justify-center gap-4"
-        ><NuxtLink
-          v-if="profile.user_plan"
-          to="/settings/payments"
-        >
-          <PrimeTag
-            class="bg-primary-500/20 text-nowrap rounded-lg border border-primary-800 text-primary-500"
-          >
-            {{ profile.user_plan }}
-          </PrimeTag>
-        </NuxtLink>
-        <PrimeTag v-if="profile.user_role">
-          {{ profile.user_role }}
-        </PrimeTag>
+      <div class="flex items-center">
         <PrimeAvatar
           v-if="avatarUrl"
           :image="avatarUrl"
           size="normal"
           shape="circle"
           class="cursor-pointer"
-          aria-haspopup="true"
-          aria-controls="overlay_menu"
-          @error="handleImageError"
           @click="toggleMenu"
         />
         <PrimeMenu
-          id="overlay_menu"
           ref="profileMenu"
           :model="items"
           :popup="true"

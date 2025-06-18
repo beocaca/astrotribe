@@ -18,29 +18,25 @@ useHead({
   ],
 })
 
-const catTagStore = useCategoryTagStore()
-const currentUser = useCurrentUser()
-
-onMounted(async () => {
-  document.documentElement.classList.add('dark')
-  try {
-    await Promise.all([currentUser.refreshUserStore()])
-  } catch (error: any) {
-    console.error('Error initializing data:', error)
-  }
-})
+// const currentUser = useCurrentUser()
+//
+// onMounted(async () => {
+//   document.documentElement.classList.add('dark')
+//   try {
+//     await Promise.all([currentUser.refreshUserStore()])
+//   } catch (error: any) {
+//     console.error('Error initializing data:', error)
+//   }
+// })
 </script>
 
 <template>
   <div class="h-full w-full dark">
     <NuxtLoadingIndicator />
-    <NuxtPwaAssets />
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
     <PrimeToast position="bottom-right" />
-    <ReferralCapture />
-    <!-- <Notification /> -->
   </div>
 </template>
 

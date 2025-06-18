@@ -1,5 +1,5 @@
 import { storeToRefs } from 'pinia'
-import { FEATURES } from '#shared/constants'
+import { FEATURES } from '#shared/index'
 
 // composables/usePlan.ts
 export enum PlanType {
@@ -29,7 +29,7 @@ export const usePlan = () => {
 
   const isFeatureAvailable = (featureKey: keyof typeof FEATURES) => {
     const feature = FEATURES[featureKey]
-    return !feature.comingSoon && getFeatureLimit(featureKey) !== 0
+    return !feature.comingSoon && getFeatureLimit(featureKey) !== undefined
   }
 
   const checkFeatureLimit = async (

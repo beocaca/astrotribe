@@ -221,6 +221,7 @@ onMounted(async () => {
       status: { notIn: ['cancelled', 'expired'] },
     })
     plansData.value = await razorpay.fetchPlans()
+    console.log('[DEBUG] plansData:', plansData.value)
   } catch (error: any) {
     console.error('Error fetching subscriptions:', error)
   } finally {

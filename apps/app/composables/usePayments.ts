@@ -20,7 +20,7 @@ export const usePayments = () => {
     const start_at = oldSubscription?.[0]?.current_end
 
     try {
-      const response = await $fetch(`/api/payment/subscriptions/create`, {
+      const response = await $fetch('/api/payment/subscriptions/create', {
         method: 'POST',
         body: {
           plan_id,
@@ -30,12 +30,13 @@ export const usePayments = () => {
           }),
           user_id: profile.value.id,
           total_count,
+          provider: 'razorpay',
         },
       })
 
       return response
     } catch (error: any) {
-      console.error(`Error creating order`, error)
+      console.error('Error creating order', error)
     } finally {
       isLoading.value = false
     }
@@ -46,13 +47,13 @@ export const usePayments = () => {
     error.value = null
 
     try {
-      const response = await $fetch(`/api/payment/verify-payment`, {
+      const response = await $fetch('/api/payment/verify-payment', {
         method: 'POST',
         body: paymentData,
       })
       return response
     } catch (error: any) {
-      console.error(`Error verifying payment`, error)
+      console.error('Error verifying payment', error)
     } finally {
       isLoading.value = false
     }
@@ -63,11 +64,11 @@ export const usePayments = () => {
     error.value = null
 
     try {
-      const response = await $fetch(`/api/payment/plans`)
+      const response = await $fetch('/api/payment/plans')
 
       return response
     } catch (error: any) {
-      console.error(`Error verifying payment`, error)
+      console.error('Error verifying payment', error)
     } finally {
       isLoading.value = false
     }
@@ -78,7 +79,7 @@ export const usePayments = () => {
     error.value = null
 
     try {
-      const response = await $fetch(`/api/payment/subscriptions`, {
+      const response = await $fetch('/api/payment/subscriptions', {
         query: { ...(query ? query : {}), user_id: profile.value.id },
       })
 
@@ -86,7 +87,7 @@ export const usePayments = () => {
 
       return response
     } catch (error: any) {
-      console.error(`Error verifying payment`, error)
+      console.error('Error verifying payment', error)
     } finally {
       isLoading.value = false
     }

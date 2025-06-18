@@ -1,3 +1,24 @@
+<script setup lang="ts">
+const isOpen = ref(false)
+
+const getIcon = (val: string) => {
+  if (val === 'Contact') return 'material-symbols:info'
+  if (val === 'About') return 'material-symbols:call'
+  if (val === 'Preview') return 'material-symbols:globe-asia'
+  if (val === 'Team') return 'material-symbols:emoji-people'
+  if (val === 'Blog') return 'material-symbols:article'
+  if (val === 'Community') return 'material-symbols:groups-rounded'
+  if (val === 'Conference') return 'mdi:presentation'
+}
+
+defineProps({
+  links: {
+    type: Array as PropType<object[]>,
+    required: true,
+  },
+})
+</script>
+
 <template>
   <div>
     <PrimeButton
@@ -58,26 +79,5 @@
     </PrimeDrawer>
   </div>
 </template>
-
-<script setup lang="ts">
-const isOpen = ref(false)
-
-const getIcon = (val: string) => {
-  if (val === 'Contact') return 'material-symbols:info'
-  if (val === 'About') return 'material-symbols:call'
-  if (val === 'Preview') return 'material-symbols:globe-asia'
-  if (val === 'Team') return 'material-symbols:emoji-people'
-  if (val === 'Blog') return 'material-symbols:article'
-  if (val === 'Community') return 'material-symbols:groups-rounded'
-  if (val === 'Conference') return 'mdi:presentation'
-}
-
-defineProps({
-  links: {
-    type: Array as PropType<object[]>,
-    required: true,
-  },
-})
-</script>
 
 <style scoped></style>

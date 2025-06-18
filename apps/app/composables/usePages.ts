@@ -1,4 +1,3 @@
-import { storeToRefs } from 'pinia'
 import { ref } from 'vue'
 
 declare global {
@@ -44,32 +43,21 @@ const navigationCategories = ref([
     items: [
       {
         id: '1',
-        label: 'Home',
+        label: 'Discover',
         slug: '/',
-        icon: 'material-symbols:home-rounded',
-      },
-      {
-        id: '3',
-        label: 'Opportunities',
-        slug: '/opportunities',
-        icon: 'material-symbols:work',
+        icon: 'mdi:compass',
       },
     ],
   },
-  {
-    id: 'profile',
-    label: 'Profile',
-    items: [],
-  },
+  // {
+  //   id: 'profile',
+  //   label: 'Profile',
+  //   items: [],
+  // },
 ] as NavigationCategory[])
 
 export default function usePages() {
-  const client = useSupabaseClient()
-  const currentUser = useCurrentUser()
   const route = useRoute()
-  const { getFeatureUsage } = usePlan()
-
-  const { profile } = storeToRefs(currentUser)
 
   const generateBreadcrumbs = (path: string): BreadcrumbLink[] => {
     const pathParts = path.split('/').filter(Boolean)

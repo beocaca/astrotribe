@@ -1,5 +1,5 @@
 import { fileURLToPath } from 'url'
-import { dirname, join, resolve } from 'path'
+import { dirname } from 'path'
 import { defineNuxtConfig } from 'nuxt/config'
 import AstroTheme from '../../shared/theme'
 import { devPortMap } from '../../shared/paths.config'
@@ -75,17 +75,7 @@ export default defineNuxtConfig({
       asyncContext: true,
     },
     rollupConfig: {
-      external: [
-        'winston',
-        'winston-transport',
-        'util',
-        'os',
-        'fs',
-        'path',
-        'zlib',
-        'http',
-        'https',
-      ],
+      external: ['util', 'os', 'fs', 'path', 'zlib', 'http', 'https'],
     },
   },
 

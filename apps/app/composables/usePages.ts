@@ -44,7 +44,7 @@ const navigationCategories = ref([
       {
         id: '1',
         label: 'Discover',
-        slug: '/',
+        slug: '/discover',
         icon: 'mdi:compass',
       },
     ],

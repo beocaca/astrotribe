@@ -2,8 +2,10 @@ import { defineEventHandler } from 'h3'
 import * as Razorpay from 'razorpay'
 
 export default defineEventHandler(async (event) => {
-  const { razorpayKey, razorpaySecret } = useRuntimeConfig()
+  const { razorpayKey } = useRuntimeConfig().public
+  const { razorpaySecret } = useRuntimeConfig()
 
+  console.log('Razorpay Key Server', razorpayKey, razorpaySecret)
   const razorpay = new Razorpay({
     key_id: razorpayKey!,
     key_secret: razorpaySecret,

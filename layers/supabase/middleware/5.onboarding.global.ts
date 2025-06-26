@@ -12,7 +12,7 @@ export default defineNuxtRouteMiddleware(async (to) => {
     return
   }
 
-  const logger = useLogger('onboarding-middleware')
+  const logger = console
   const config = useRuntimeConfig()
   const supabase = useSupabaseClient()
   const user = useSupabaseUser()

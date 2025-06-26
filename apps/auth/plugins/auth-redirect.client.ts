@@ -3,7 +3,7 @@ import { defineNuxtPlugin, navigateTo } from '#app'
 export default defineNuxtPlugin((nuxtApp) => {
   const { public: env } = useRuntimeConfig()
   const supabase = useSupabaseClient()
-  const logger = useLogger('auth-redirect')
+  const logger = console
 
   // Check onboarding status and redirect if needed
   async function checkOnboardingStatus() {

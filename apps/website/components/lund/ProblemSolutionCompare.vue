@@ -39,8 +39,8 @@ const processes = computed(() => {
       icon: 'mdi:school',
     },
     {
-      id: 'discovery',
-      label: 'Space Discovery Exploration',
+      id: 'discover',
+      label: 'Discover The Cosmos',
       icon: 'mdi:rocket',
     },
   ]
@@ -86,8 +86,8 @@ const processes = computed(() => {
   // Enthusiast processes
   const enthusiastProcesses = [
     {
-      id: 'discovery',
-      label: 'Space Discovery Exploration',
+      id: 'discover',
+      label: 'Discover The Cosmos',
       icon: 'mdi:rocket',
     },
     {
@@ -326,9 +326,9 @@ const processContent = computed(() => {
     },
 
     // Enthusiast processes
-    'discovery': {
+    'discover': {
       traditional: {
-        title: 'Traditional Space Discovery',
+        title: 'Discover the Cosmos',
         description:
           'Enthusiasts struggle to find and understand the latest astronomical discoveries.',
         steps: [

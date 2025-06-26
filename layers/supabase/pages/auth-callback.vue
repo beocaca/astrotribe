@@ -2,14 +2,14 @@
 import { useRoute } from 'vue-router'
 import { useSupabaseClient } from '#imports'
 
-const logger = useLogger('auth-callback')
+const logger = console
 const env = useRuntimeConfig().public
 const supabase = useSupabaseClient()
 
 const isLoading = ref(true)
 const error = ref(false)
 const errorMessage = ref('')
-const redirectTarget = ref(env.appURL)
+const redirectTarget = ref('/')
 const progressWidth = ref(0)
 
 // Function to redirect to login
@@ -19,8 +19,11 @@ function redirectToLogin() {
 
 // Get redirect URL from query params
 const route = useRoute()
-if (route.query.redirect_to) {
-  redirectTarget.value = decodeURIComponent(route.query.redirect_to as string)
+const redirectToQuery = route.query.redirect_to
+if (typeof redirectToQuery === 'string' && redirectToQuery.length > 0) {
+  redirectTarget.value = decodeURIComponent(redirectToQuery)
+} else {
+  redirectTarget.value = String(env.appURL || '/')
 }
 
 // Progress animation

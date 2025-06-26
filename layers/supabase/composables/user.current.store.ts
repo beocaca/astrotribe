@@ -23,6 +23,7 @@ export const useCurrentUser = defineStore(DOMAIN_KEY, () => {
     | 'discord'
     | 'email'
 
+  console.log('useCurrentUser store initialized', user.value)
   const profile = computed(() => ({
     id: user.value?.id,
     given_name: user.value?.user_metadata?.given_name,

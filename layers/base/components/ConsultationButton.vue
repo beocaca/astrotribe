@@ -2,31 +2,24 @@
 import { ref, onMounted, nextTick } from 'vue'
 import { useAnalytics } from '#imports'
 
+// Add the prop definition
+const props = defineProps({
+  isSidebarOpen: {
+    type: Boolean,
+    default: true,
+  },
+})
+
 const { trackUserEngagement, UserEngagementMetric } = useAnalytics()
 const showButton = ref(true)
-const isHovered = ref(false)
 const dialogVisible = ref(false)
-const calendarLoaded = ref(false)
-const calendarContainer = ref(null)
 
 const handleConsultationClick = () => {
   trackUserEngagement(UserEngagementMetric.ActionsPerSession, {
     action: 'consultation_request',
-    source: 'floating_button',
+    source: 'sidebar_button', // Changed from floating_button
   })
   dialogVisible.value = true
-}
-
-const initializeCalendarButton = () => {
-  if (calendarContainer.value && window.calendar && window.calendar.schedulingButton) {
-    window.calendar.schedulingButton.load({
-      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3bUSyyKHFhpezfHQ6a_3mqIonGemdu5biPNBRslpw_1w-bmkaUUTJUudTjdIdC6gB106BkdIre?gv=true',
-      color: '#039BE5',
-      label: 'Book an appointment',
-      target: calendarContainer.value,
-    })
-    calendarLoaded.value = true
-  }
 }
 
 onMounted(() => {
@@ -47,29 +40,41 @@ onMounted(() => {
 
 <template>
   <Transition name="slide-fade">
-    <button
-      v-if="showButton"
-      class="fixed bottom-10 right-6 z-[1001] flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary-600 to-blue-600 px-6 py-3 text-white shadow-lg shadow-primary-600/30 transition-all duration-300 hover:from-primary-500 hover:to-blue-500"
-      :class="{ 'scale-105': isHovered }"
-      @click="handleConsultationClick"
-      @mouseenter="isHovered = true"
-      @mouseleave="isHovered = false"
-    >
-      <Icon
-        name="mdi:calendar-clock"
-        size="18"
-      />
-      <span class="font-medium">Book Consultation</span>
-    </button>
+    <div v-if="showButton">
+      <button
+        v-if="props.isSidebarOpen"
+        class="w-full rounded-lg bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:bg-blue-700 transition-colors"
+        @click="handleConsultationClick"
+      >
+        <Icon
+          name="mdi:calendar-clock"
+          size="16"
+          class="mr-2"
+        />
+        Book Consultation
+      </button>
+
+      <button
+        v-else
+        class="w-full rounded-lg p-2 hover:bg-gray-800 transition-colors flex items-center justify-center"
+        :title="'Book Consultation'"
+        @click="handleConsultationClick"
+      >
+        <Icon
+          name="mdi:calendar-clock"
+          size="20"
+        />
+      </button>
+    </div>
   </Transition>
 
   <PrimeDialog
-    modal
     v-model:visible="dialogVisible"
+    modal
     header="Schedule a Consultation"
     class="calendar-dialog"
     :style="{ width: '90vw', height: '90vh' }"
-    :dismissableMask="true"
+    :dismissable-mask="true"
     :maximizable="true"
   >
     <iframe

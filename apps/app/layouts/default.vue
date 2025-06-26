@@ -5,10 +5,8 @@ const showPrelaunchMessage = useCookie<boolean>('frontiers_message', { default: 
 
 <template>
   <div class="h-screen flex flex-col relative foreground">
-    <div class="w-full flex backgroun d overflow-hidden h-full">
-      <IBMenuSidebar
-      
-      :categories="appLinks" />
+    <div class="w-full flex background overflow-hidden h-full">
+      <IBMenuSidebar :categories="appLinks" />
       <div
         class="w-full h-full pb-[var(--mobi-bottom-nav-height)] lg:pb-0 relative flex flex-col rounded-lg overflow-hidden"
       >

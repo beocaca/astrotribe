@@ -1,4 +1,15 @@
 <script setup lang="ts">
+// const currentUser = useCurrentUser()
+//
+// onMounted(async () => {
+//   document.documentElement.classList.add('dark')
+//   try {
+//     await Promise.all([currentUser.refreshUserStore()])
+//   } catch (error: any) {
+//     console.error('Error initializing data:', error)
+//   }
+// })
+
 useHead({
   htmlAttrs: {
     lang: 'en',
@@ -17,17 +28,6 @@ useHead({
     },
   ],
 })
-
-// const currentUser = useCurrentUser()
-//
-// onMounted(async () => {
-//   document.documentElement.classList.add('dark')
-//   try {
-//     await Promise.all([currentUser.refreshUserStore()])
-//   } catch (error: any) {
-//     console.error('Error initializing data:', error)
-//   }
-// })
 </script>
 
 <template>

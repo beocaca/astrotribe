@@ -52,6 +52,8 @@ export default defineNuxtConfig({
     '@nuxt/test-utils/module',
   ],
 
+  ssr: false,
+
   imports: {
     dirs: ['stores/**', 'composables/**', 'utils/**'],
   },
@@ -87,6 +89,7 @@ export default defineNuxtConfig({
 
   // Add proper MIME type handling
   nitro: {
+    preset: 'static',
     experimental: {
       asyncContext: true,
     },

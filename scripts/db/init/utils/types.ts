@@ -24,7 +24,7 @@ export type AppRole =
   | 'admin'
   | 'super_admin'
   | 'service_role'
-export type ContactType = 'personal' | 'company' | 'professional' | 'recruitment' | 'founder'
+export type ContactType = 'personal' | 'organization' | 'professional' | 'recruitment' | 'founder'
 export type ContentStatus =
   | 'draft'
   | 'pending_review'
@@ -44,7 +44,7 @@ export type ContentType =
   | 'events'
   | 'opportunities'
   | 'research'
-  | 'companies'
+  | 'organizations'
   | 'contact'
   | 'people'
   | 'unknown'
@@ -62,7 +62,7 @@ export type FeedbackType =
   | 'user_interface_issue'
   | 'performance_issue'
   | 'documentation'
-export type FollowedEntity = 'company' | 'user'
+export type FollowedEntity = 'organization' | 'user'
 export type Priority = 'very_low' | 'low' | 'medium' | 'high' | 'critical'
 export type PrivacyLevel = 'private' | 'connected' | 'public'
 export type ScrapeFrequency =

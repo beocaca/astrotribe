@@ -25,33 +25,52 @@ useHead({
         </p>
       </div>
 
-      <!-- PDF Embed -->
+      <!-- PDF Actions -->
       <div class="max-w-5xl mx-auto">
         <div
           class="bg-primary-900/30 backdrop-blur-sm rounded-lg overflow-hidden border border-primary-800/30 shadow-xl"
         >
-          <!-- PDF Viewer -->
-          <div class="aspect-[8.5/11] w-full">
-            <iframe
-              src="/documents/AstronEra_Endorsement_DarkSky_Dec_2025.pdf"
-              class="w-full h-full"
-              title="DarkSky International Endorsement Letter"
-            />
-          </div>
-
-          <!-- Download Button -->
-          <div class="p-6 bg-primary-900/50 flex justify-center">
-            <a
-              href="/documents/AstronEra-Endorsement-DSI-2025.pdf"
-              download="AstronEra_DarkSky_Endorsement_2025.pdf"
-              class="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 hover:bg-primary-500 rounded-lg transition-colors"
+          <!-- Document Icon & Info -->
+          <div class="p-12 text-center">
+            <div
+              class="inline-flex items-center justify-center w-24 h-24 mb-6 bg-primary-800/50 rounded-full"
             >
               <Icon
-                name="mdi:download"
-                size="20px"
+                name="mdi:file-document"
+                size="48px"
+                class="text-primary-400"
               />
-              <span>Download Official Letter (PDF)</span>
-            </a>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2">Official Endorsement Letter</h3>
+            <p class="text-primary-200 mb-8">December 18, 2025 - DarkSky International</p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/documents/AstronEra-Endorsement-DSI-2025.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary-600 hover:bg-primary-500 rounded-lg transition-colors text-white font-medium"
+              >
+                <Icon
+                  name="mdi:open-in-new"
+                  size="20px"
+                />
+                <span>Open PDF in New Tab</span>
+              </a>
+
+              <a
+                href="/documents/AstronEra-Endorsement-DSI-2025.pdf"
+                download="AstronEra_DarkSky_Endorsement_2025.pdf"
+                class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-transparent border-2 border-primary-600 hover:bg-primary-900/50 rounded-lg transition-colors text-white font-medium"
+              >
+                <Icon
+                  name="mdi:download"
+                  size="20px"
+                />
+                <span>Download PDF</span>
+              </a>
+            </div>
           </div>
         </div>
 

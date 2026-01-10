@@ -239,6 +239,22 @@ export default defineNuxtConfig({
       headers: { 'Content-Type': 'application/xml', 'Cache-Control': 'max-age=3600' },
     },
     '/api/__sitemap__/**': { cors: true, headers: { 'Cache-Control': 'max-age=3600' } },
+    // DOI LINKS
+    '/doi/darksky-acknowledgement': {
+      redirect: { to: '/darksky-acknowledgement', statusCode: 301 },
+    },
+    '/doi/symposium-2025': {
+      redirect: { to: '/symposiums/symposium-2025', statusCode: 301 },
+    },
+    '/doi/astrotribe-nashik-2023': {
+      redirect: { to: '/projects/astrotribe-nashik-2023', statusCode: 301 },
+    },
+    '/doi/astrotribe-ladakh-2024': {
+      redirect: { to: '/projects/astrotribe-ladakh-2024', statusCode: 301 },
+    },
+    '/doi/idspac-2023': {
+      redirect: { to: '/conferences/idspac-2023', statusCode: 301 },
+    },
   },
 
   devServer: { host: 'localhost', port: process.env.NUXT_MULTI_APP ? devPortMap.website : 3000 },

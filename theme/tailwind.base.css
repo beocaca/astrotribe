@@ -1,4 +1,4 @@
-@import 'scrollbar.css';
+@import './scrollbar.css';
 
 @layer tailwind-base, primevue, tailwind-utilities;
 

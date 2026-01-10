@@ -741,35 +741,35 @@ alter table "public"."role_permissions" drop column "update";
 
 set check_function_bodies = off;
 
-CREATE OR REPLACE FUNCTION auth.check_condition(condition jsonb)
- RETURNS boolean
- LANGUAGE plpgsql
-AS $function$
-DECLARE
-    condition_sql TEXT;
-BEGIN
-    condition_sql := condition->>'sql';
-    IF condition_sql IS NULL THEN
-        RETURN TRUE;
-    END IF;
-
-    RETURN auth.evaluate_condition(condition_sql);
-END;
-$function$
-;
-
-CREATE OR REPLACE FUNCTION auth.evaluate_condition(condition_sql text)
- RETURNS boolean
- LANGUAGE plpgsql
-AS $function$
-DECLARE
-    result BOOLEAN;
-BEGIN
-    EXECUTE 'SELECT ' || condition_sql INTO result;
-    RETURN result;
-END;
-$function$
-;
+-- CREATE OR REPLACE FUNCTION auth.check_condition(condition jsonb)
+--  RETURNS boolean
+--  LANGUAGE plpgsql
+-- AS $function$
+-- DECLARE
+--     condition_sql TEXT;
+-- BEGIN
+--     condition_sql := condition->>'sql';
+--     IF condition_sql IS NULL THEN
+--         RETURN TRUE;
+--     END IF;
+-- 
+--     RETURN auth.evaluate_condition(condition_sql);
+-- END;
+-- $function$
+-- ;
+-- 
+-- CREATE OR REPLACE FUNCTION auth.evaluate_condition(condition_sql text)
+--  RETURNS boolean
+--  LANGUAGE plpgsql
+-- AS $function$
+-- DECLARE
+--     result BOOLEAN;
+-- BEGIN
+--     EXECUTE 'SELECT ' || condition_sql INTO result;
+--     RETURN result;
+-- END;
+-- $function$
+-- ;
 
 CREATE OR REPLACE FUNCTION public.enable_rls_on_all_tables()
  RETURNS void

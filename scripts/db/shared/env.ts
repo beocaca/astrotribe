@@ -6,7 +6,7 @@ import dotenv from 'dotenv'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 // Resolve the root .env path (adjust if your structure is different)
-const envPath = path.resolve(__dirname, '../../.env')
+const envPath = path.resolve(__dirname, '../../../.env')
 
 // Load the environment variables
 const result = dotenv.config({ path: envPath, override: true })

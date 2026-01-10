@@ -1,5 +1,5 @@
 -- Safely create http extension if it doesn't exist
-CREATE EXTENSION IF NOT EXISTS "http" WITH SCHEMA "extensions" VERSION '1.5';
+CREATE EXTENSION IF NOT EXISTS "http" WITH SCHEMA "extensions";
 
 -- Safely alter columns by checking if they are not null first
 DO $$

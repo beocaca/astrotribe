@@ -3,7 +3,7 @@ import { execSync } from 'child_process'
 import path from 'path'
 import fs from 'fs'
 import { fileURLToPath } from 'url'
-import { getSharedEnv } from '../../../shared/env'
+import { getSharedEnv } from '../../../shared/env.js'
 
 const env = getSharedEnv().private
 

@@ -8,12 +8,22 @@
 # working directory name when running `supabase init`.
 project_id = "astrotribe"
 
+# NORMAL SETTINGS
+# [db.settings]
+# max_connections = 100
+# shared_buffers = "256MB"
+# work_mem = "64MB"
+# maintenance_work_mem = "256MB"
+# effective_cache_size = "2GB"
+# max_wal_size = "1GB"
+
+# GRAPH_LAYER BENCHMARK TESTING SETTINGS
 [db.settings]
 max_connections = 100
-shared_buffers = "256MB"
-work_mem = "4MB"
-maintenance_work_mem = "64MB"
-effective_cache_size = "512MB"
+shared_buffers = "4GB"
+work_mem = "512MB"
+maintenance_work_mem = "2GB"
+effective_cache_size = "12GB"
 max_wal_size = "1GB"
 
 [api]
@@ -155,9 +165,9 @@ template = "Your code is {{ .Code }} ."
 # 4152127777 = "123456"
 
 # This hook runs before a token is issued and allows you to add additional claims based on the authentication method used.
-# [auth.hook.custom_access_token]
-# enabled = true
-# uri = "pg-functions://postgres/public/custom_access_token_hook"
+[auth.hook.custom_access_token]
+enabled = true
+uri = "pg-functions://postgres/public/custom_access_token_hook"
 
 # Configure one of the supported SMS providers: `twilio`, `twilio_verify`, `messagebird`, `textlocal`, `vonage`.
 [auth.sms.twilio]

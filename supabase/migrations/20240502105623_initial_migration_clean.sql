@@ -15,7 +15,7 @@ ALTER SCHEMA "public" OWNER TO "postgres";
 
 create EXTENSION if not exists "vector" with schema "public";
 
-CREATE EXTENSION IF NOT EXISTS "pgsodium" WITH SCHEMA "pgsodium";
+-- CREATE EXTENSION IF NOT EXISTS "pgsodium" WITH SCHEMA "pgsodium";
 
 CREATE EXTENSION IF NOT EXISTS "pg_graphql" WITH SCHEMA "graphql";
 

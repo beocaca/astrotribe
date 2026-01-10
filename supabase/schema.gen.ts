@@ -808,15 +808,15 @@ export type Database = {
       content_tags: {
         Row: {
           content_id: string
-          tag_id: number
+          topic_id: number
         }
         Insert: {
           content_id: string
-          tag_id: number
+          topic_id: number
         }
         Update: {
           content_id?: string
-          tag_id?: number
+          topic_id?: number
         }
         Relationships: [
           {
@@ -827,8 +827,8 @@ export type Database = {
             referencedColumns: ['id']
           },
           {
-            foreignKeyName: 'content_tags_tag_id_fkey'
-            columns: ['tag_id']
+            foreignKeyName: 'content_tags_topic_id_fkey'
+            columns: ['topic_id']
             isOneToOne: false
             referencedRelation: 'tags'
             referencedColumns: ['id']
@@ -1513,22 +1513,22 @@ export type Database = {
         Row: {
           id: number
           news_id: number
-          tag_id: number
+          topic_id: number
         }
         Insert: {
           id: number
           news_id: number
-          tag_id: number
+          topic_id: number
         }
         Update: {
           id?: number
           news_id?: number
-          tag_id?: number
+          topic_id?: number
         }
         Relationships: [
           {
-            foreignKeyName: 'news_tags_tag_id_fkey'
-            columns: ['tag_id']
+            foreignKeyName: 'news_tags_topic_id_fkey'
+            columns: ['topic_id']
             isOneToOne: false
             referencedRelation: 'tags'
             referencedColumns: ['id']

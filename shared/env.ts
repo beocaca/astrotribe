@@ -22,7 +22,6 @@ export const getSharedEnv = () => ({
     supabaseKey: process.env.NUXT_PUBLIC_SUPABASE_KEY,
     loginPath: process.env.NUXT_PUBLIC_LOGIN_PATH,
     registerPath: process.env.NUXT_PUBLIC_REGISTER_PATH,
-    cmsURL: process.env.NUXT_PUBLIC_CMS_URL ?? localHost(devPortMap.cms),
     authURL: process.env.NUXT_PUBLIC_AUTH_URL ?? localHost(devPortMap.auth),
     appURL: process.env.NUXT_PUBLIC_APP_URL ?? localHost(devPortMap.app),
     apiURL: process.env.NUXT_PUBLIC_API_URL ?? localHost(devPortMap.api),
@@ -50,7 +49,6 @@ export const getSharedEnv = () => ({
         : process.env.NUXT_RAZORPAY_TEST_KEY,
   },
   private: {
-    cmsURL: process.env.NUXT_CMS_URL ?? localHost(devPortMap.cms),
     resendApiKey: process.env.NUXT_RESEND_API_KEY,
     resendFromEmail: process.env.NUXT_RESEND_FROM_EMAIL,
     resendToEmail: process.env.NUXT_RESEND_TO_EMAIL,

@@ -1,0 +1,9 @@
+# Temporary files created during migration process
+table-comments-new.sql
+
+# During testing phase, keep diff files for manual review
+# After testing, these will be auto-cleaned:
+# table-comments-diff.sql
+
+# Always keep the source of truth
+!table-comments.sql

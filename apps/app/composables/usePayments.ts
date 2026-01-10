@@ -1,104 +1,65 @@
-export const usePayments = () => {
-  const isLoading = ref(false)
-  const error = ref(null)
-  const currentUser = useCurrentUser()
-  const { profile } = storeToRefs(currentUser)
-  const createOrder = async (plan: Record<string, any>) => {
-    isLoading.value = true
-    error.value = null
+export const usePayments = (toggleLoader: (message?: string) => void) => {
+  const toast = useNotification()
 
-    const { plan_id, external_plan_id, total_count } = plan
-
-    const oldSubscription = await fetchSubscriptions({
-      where: {
-        plan_id: { not: plan_id },
-        name: plan.name,
-        status: { In: ['cancelled', 'completed', 'expired'] },
-      },
-    })
-
-    const start_at = oldSubscription?.[0]?.current_end
-
+  const verifyPayment = async (paymentId: string, subscriptionId: string) => {
     try {
-      const response = await $fetch('/api/payment/subscriptions/create', {
+      const response = await $fetch(`/api/payment/subscriptions/verify`, {
         method: 'POST',
         body: {
-          plan_id,
-          external_plan_id,
-          ...(start_at && {
-            start_at: new Date(start_at * 1000).toISOString(),
-          }),
-          user_id: profile.value.id,
-          total_count,
-          provider: 'razorpay',
+          paymentId,
+          subscriptionId,
         },
       })
 
       return response
-    } catch (error: any) {
-      console.error('Error creating order', error)
-    } finally {
-      isLoading.value = false
-    }
-  }
-
-  const verifyPayment = async (paymentData: any) => {
-    isLoading.value = true
-    error.value = null
-
-    try {
-      const response = await $fetch('/api/payment/verify-payment', {
-        method: 'POST',
-        body: paymentData,
+    } catch (error) {
+      console.error('Could not verify payment', error)
+      toast.error({
+        summary: 'Could not activate subscription',
+        message: 'Please retry or contact the administrator if the error persists',
       })
-      return response
-    } catch (error: any) {
-      console.error('Error verifying payment', error)
     } finally {
-      isLoading.value = false
+      toggleLoader()
     }
   }
 
-  const fetchPlans = async () => {
-    isLoading.value = true
-    error.value = null
+  const handlePaymentSuccess = (response: any) => {
+    // Handle successful payment
+    toggleLoader('Confirming Subscription')
 
-    try {
-      const response = await $fetch('/api/payment/plans')
-
-      return response
-    } catch (error: any) {
-      console.error('Error verifying payment', error)
-    } finally {
-      isLoading.value = false
-    }
-  }
-
-  const fetchSubscriptions = async (query?: Record<string, any>) => {
-    isLoading.value = true
-    error.value = null
-
-    try {
-      const response = await $fetch('/api/payment/subscriptions', {
-        query: { ...(query ? query : {}), user_id: profile.value.id },
+    if (!response || !response.razorpay_payment_id || !response.razorpay_subscription_id) {
+      console.error('Something went wrong: ', response)
+      toast.error({
+        summary: 'Could not create subscription',
+        message: 'Please contact the administrator',
       })
-
-      console.log('Subscriptions RESPONSE', response)
-
-      return response
-    } catch (error: any) {
-      console.error('Error verifying payment', error)
-    } finally {
-      isLoading.value = false
+      toggleLoader()
+      return
     }
+
+    const { razorpay_payment_id: paymentId, razorpay_subscription_id: subscriptionId } = response
+
+    verifyPayment(paymentId, subscriptionId)
+
+    toast.success({
+      summary: 'Payment Successful',
+      message: 'Your subscription is being activated',
+    })
+  }
+
+  const handlePaymentError = (error: any) => {
+    // Handle payment error
+    console.error('Payment failed:', error)
+
+    toast.error({
+      summary: 'Payment Failure',
+      message: 'Please try again or a different payment method',
+    })
+    toggleLoader()
   }
 
   return {
-    isLoading,
-    error,
-    createOrder,
-    verifyPayment,
-    fetchPlans,
-    fetchSubscriptions,
+    handlePaymentSuccess,
+    handlePaymentError,
   }
 }

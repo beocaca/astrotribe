@@ -16,7 +16,6 @@ export interface Event {
 let socketInstance: Socket | null = null
 
 export const useEvents = () => {
-  const currentUser = useCurrentUser()
   const lastEvent = ref<Event | null>(null)
   const isConnected = ref(false)
 
@@ -44,7 +43,6 @@ export const useEvents = () => {
   })
 
   socketInstance.on('paymentEvent', async (event: Event) => {
-    if (event.module == 'subscription') await currentUser.refreshUserStore()
     lastEvent.value = event
   })
 

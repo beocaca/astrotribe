@@ -19,6 +19,7 @@ interface CustomerInfo {
 
 interface Props {
   plan: PlanDetails
+  createSubscription: (plan: Record<string, any>) => Promise<Record<string, any> | null>
   customer?: CustomerInfo
   buttonLabel?: string
   buttonIcon?: string
@@ -27,9 +28,10 @@ interface Props {
     logo?: string
   }
   notes?: Record<string, string>
+  handlePaymentSuccess: (response: any) => void
+  handlePaymentError: (response: any) => void
 }
 
-const razorpay = usePayments()
 const toast = useNotification()
 
 const props = withDefaults(defineProps<Props>(), {
@@ -52,7 +54,7 @@ console.log('Razorpay Key Button:', razorpayKey)
 const loading = ref(false)
 const isRazorpayLoaded = ref(false)
 
-const razorpayOptions = computed(() => ({
+const razorpayOptions = reactive({
   key: razorpayKey,
   subscription_id: props.plan.subscription_id,
   subscriptionStartsLater: false,
@@ -62,7 +64,7 @@ const razorpayOptions = computed(() => ({
   description: props.plan.description,
   image: props.theme.logo,
   handler: function (response: any) {
-    emit('payment-success', response)
+    props.handlePaymentSuccess(response)
     unloadRazorpay()
   },
   modal: {
@@ -82,13 +84,13 @@ const razorpayOptions = computed(() => ({
   theme: {
     color: props.theme.color,
   },
-}))
+})
 
 let rzp: any
 
 // Watch for changes in razorpayOptions and recreate instance if needed
 watch(
-  () => razorpayOptions.value,
+  () => razorpayOptions,
   (newOptions) => {
     if (isRazorpayLoaded.value) {
       rzp = new (window as any).Razorpay(newOptions)
@@ -115,7 +117,7 @@ const loadRazorpay = async () => {
   })
 
   // Initialize Razorpay after script is loaded
-  rzp = new (window as any).Razorpay(razorpayOptions.value)
+  rzp = new (window as any).Razorpay(razorpayOptions)
 }
 
 const unloadRazorpay = () => {
@@ -132,37 +134,81 @@ const unloadRazorpay = () => {
 }
 
 const createSubscription = async () => {
-  const subscription = await razorpay.createOrder({
-    plan_id: props.plan.id,
-    external_plan_id: props.plan.external_plan_id,
-    total_count: props.plan.interval === 'monthly' ? 360 : 30,
-  })
+  try {
+    const subscription = await props.createSubscription({
+      plan_id: props.plan.id,
+      external_plan_id: props.plan.external_plan_id,
+      total_count: props.plan.interval === 'monthly' ? 360 : 30,
+    })
 
-  if (subscription?.start_at > Date.now() / 1000) {
-    razorpayOptions.value.subscriptionStartsLater = true
+    if (!subscription) {
+      console.error('Could not create subscription', subscription)
+      toast.error({
+        summary: 'Could not create subscription',
+        message: 'If the error persists, please contact the administrator',
+      })
+      return false
+    }
+
+    // Check if subscription starts in the future
+    if (subscription?.start_at) {
+      const start_at = getTimestamp(subscription.start_at)
+
+      if (start_at > Math.floor(Date.now() / 1000)) {
+        razorpayOptions.subscriptionStartsLater = true
+
+        // Show user when the subscription will start and be charged
+        const startDate = new Date(start_at * 1000)
+        toast.success({
+          summary: 'Subscription Scheduled',
+          message: `Your new subscription will start on ${startDate.toDateString()} and you'll be charged then.`,
+        })
+
+        return false // Don't proceed to payment since it's scheduled for later
+      }
+    }
+
+    razorpayOptions.subscription_id = subscription.external_subscription_id
+    return true
+  } catch (error) {
+    console.error('Error creating subscription:', error)
+    toast.error({
+      summary: 'Error',
+      message: 'Failed to create subscription. Please try again.',
+    })
+    return false
   }
-  razorpayOptions.value.subscription_id = subscription.id
+}
+
+const getTimestamp = (start_at: string) => {
+  // Replace space with 'T' to make it ISO 8601-compliant
+  const isoString = start_at.replace(' ', 'T')
+
+  // Create a Date object
+  const date = new Date(isoString)
+
+  // Convert to Unix timestamp (in seconds)
+  return Math.floor(date.getTime() / 1000)
 }
 
 const handlePayment = async () => {
   loading.value = true
-  if (!razorpayOptions.value.subscription_id) await createSubscription()
-
-  if (razorpayOptions.value.subscriptionStartsLater) {
-    toast.success({
-      summary: 'Subscription Created',
-      message:
-        'Your new subscription will start and will be charged at the end of your current subscription',
-    })
-    return
-  }
-
-  await loadRazorpay()
 
   try {
+    if (!razorpayOptions.subscription_id) {
+      const shouldProceedToPayment = await createSubscription()
+
+      if (!shouldProceedToPayment) {
+        loading.value = false
+        return // Subscription was scheduled for later, no immediate payment needed
+      }
+    }
+
+    // Only proceed with Razorpay if subscription should start immediately
+    await loadRazorpay()
     rzp.open()
   } catch (error: any) {
-    emit('payment-error', error)
+    props.handlePaymentError(error)
     loading.value = false
   }
 }
